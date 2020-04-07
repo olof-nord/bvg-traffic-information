@@ -1,0 +1,20 @@
+name: BVG traffic information app pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Lint the API specification
+        uses: docker://openapitools/openapi-generator-cli
+        with:
+          args: validate -i api/spec.yaml
