@@ -1,0 +1,211 @@
+---
+openapi: "3.0.2"
+info:
+  title: "Verkehrsmeldungen"
+  version: "v0.1"
+servers:
+- url: "https://api-dev.bvg.de/verkehrsmeldungen"
+  description: "Verkehrsmeldungen"
+- url: "https://api-test.bvg.de/verkehrsmeldungen"
+  description: "Verkehrsmeldungen"
+security:
+- ApiKey: []
+paths:
+  /:
+    get:
+      tags:
+      - "FGI"
+      summary: "Get current FGI"
+      description: "Shows the FGI <br> Parameter: datum (pattern=\"yyyy-MM-dd'T'HH:mm:ss\"\
+        )"
+      operationId: "getFGI"
+      parameters:
+      - name: "verkehrsmittel"
+        in: "query"
+        required: false
+        schema:
+          type: "integer"
+          format: "int32"
+      - name: "linie"
+        in: "query"
+        required: false
+        schema:
+          type: "string"
+          default: ""
+      - name: "abschnittbeginn"
+        in: "query"
+        required: false
+        schema:
+          type: "string"
+          default: ""
+      - name: "abschnittbeginnId"
+        in: "query"
+        required: false
+        schema:
+          type: "integer"
+          format: "int32"
+      - name: "abschnittende"
+        in: "query"
+        required: false
+        schema:
+          type: "string"
+          default: ""
+      - name: "abschnittendeId"
+        in: "query"
+        required: false
+        schema:
+          type: "integer"
+          format: "int32"
+      - name: "haltestelle"
+        in: "query"
+        required: false
+        schema:
+          type: "string"
+          default: ""
+      - name: "haltId"
+        in: "query"
+        required: false
+        schema:
+          type: "integer"
+          format: "int32"
+      - name: "latitude"
+        in: "query"
+        required: false
+        schema:
+          type: "number"
+          format: "double"
+      - name: "longitude"
+        in: "query"
+        required: false
+        schema:
+          type: "number"
+          format: "double"
+      - name: "r"
+        in: "query"
+        required: false
+        schema:
+          type: "integer"
+          format: "int32"
+      - name: "typ"
+        in: "query"
+        required: false
+        schema:
+          type: "integer"
+          format: "int32"
+      - name: "datum"
+        in: "query"
+        required: false
+        schema:
+          type: "string"
+          format: "date-time"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Message"
+components:
+  securitySchemes:
+    ApiKey:
+      type: "apiKey"
+      in: "query"
+      name: "apikey"
+  schemas:
+    Coordinate:
+      required:
+      - "latitude"
+      - "longitude"
+      type: "object"
+      properties:
+        latitude:
+          minimum: 0
+          type: "number"
+          format: "double"
+        longitude:
+          minimum: 0
+          type: "number"
+          format: "double"
+    Message:
+      required:
+      - "grundFahrplanabweichung"
+      - "meldungsId"
+      - "prioritaet"
+      - "type"
+      - "verkehrsmittel"
+      type: "object"
+      properties:
+        meldungsId:
+          type: "string"
+        relatedMessageIds:
+          type: "array"
+          items:
+            type: "string"
+        datum:
+          type: "string"
+          format: "date-time"
+        type:
+          maximum: 2
+          minimum: 0
+          type: "integer"
+          format: "int32"
+        verkehrsmittel:
+          maximum: 6
+          minimum: 1
+          type: "integer"
+          format: "int32"
+        linie:
+          type: "string"
+        richtungName:
+          type: "string"
+        richtungHafasId:
+          type: "integer"
+          format: "int32"
+        beginnAbschnittName:
+          type: "string"
+        beginnAbschnittHafasId:
+          type: "integer"
+          format: "int32"
+        endeAbschnittName:
+          type: "string"
+        endeAbschnittHafasId:
+          type: "integer"
+          format: "int32"
+        geokoordinaten:
+          $ref: "#/components/schemas/Coordinate"
+        gueltigVonDatum:
+          type: "string"
+          format: "date-time"
+        gueltigVonZeit:
+          type: "string"
+          format: "date-time"
+        gueltigBisDatum:
+          type: "string"
+          format: "date-time"
+        gueltigBisZeit:
+          type: "string"
+          format: "date-time"
+        prioritaet:
+          maximum: 3
+          minimum: 1
+          type: "integer"
+          format: "int32"
+        grundFahrplanabweichung:
+          maximum: 4
+          minimum: 0
+          type: "integer"
+          format: "int32"
+        textIntUrsache:
+          type: "string"
+        sev:
+          type: "string"
+        textIntAuswirkung:
+          type: "string"
+        umfahrung:
+          type: "string"
+        textWAPSMSUrsache:
+          type: "string"
+        textWAPSMSAuswirkung:
+          type: "string"
