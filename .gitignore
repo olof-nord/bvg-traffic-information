@@ -137,3 +137,5 @@ fabric.properties
 
 # End of https://www.gitignore.io/api/angular,intellij,linux
 
+# Env files
+.env
