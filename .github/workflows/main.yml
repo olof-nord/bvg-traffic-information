@@ -6,15 +6,33 @@ on:
       - master
 
 jobs:
-  build:
-
+  setup:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Lint the API specification
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Install dependencies
+        run: npm --prefix ./traffic-information-app install
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint API specification
         uses: docker://openapitools/openapi-generator-cli
         with:
           args: validate -i api/spec.yaml
+
+      - name: Lint application
+        run: npm --prefix ./traffic-information-app run lint
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build application
+        run: npm --prefix ./traffic-information-app run build
