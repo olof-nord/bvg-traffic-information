@@ -1,15 +1,30 @@
 {
   "name": "traffic-information-app",
-  "version": "0.0.0",
+  "description": "This project uses the BVG Verkehrsmeldungen API and visualises the information",
+  "version": "0.1.0",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:olof-nord/bvg-traffic-information-app.git"
+  },
+  "author": {
+    "name": "Olof Nord"
+  },
+  "keywords": [
+    "angular",
+    "bvg"
+  ],
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "clean": "rimraf api/*",
+    "prestart": "npm run clean",
+    "start": "ng-openapi-gen && ng serve --open",
+    "prebuild": "npm run clean",
+    "build": "ng-openapi-gen && ng build",
     "test": "ng test",
+    "test:dev": "ng test --watch=true",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0",
     "@angular/common": "~9.1.0",
@@ -28,9 +43,9 @@
     "@angular/cli": "~9.1.0",
     "@angular/compiler-cli": "~9.1.0",
     "@angular/language-service": "~9.1.0",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -39,7 +54,9 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "ng-openapi-gen": "^0.10.0",
     "protractor": "~5.4.3",
+    "rimraf": "^3.0.2",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
