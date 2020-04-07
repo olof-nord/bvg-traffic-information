@@ -22,6 +22,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: Lint API specification
         uses: docker://openapitools/openapi-generator-cli
@@ -33,6 +34,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: Build application
         run: npm --prefix ./traffic-information-app run build
