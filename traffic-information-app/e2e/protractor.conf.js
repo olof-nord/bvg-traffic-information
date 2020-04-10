@@ -15,7 +15,7 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      binary: require('protractor').browser
+      binary: require('puppeteer').executablePath()
     }
   },
   directConnect: true,
