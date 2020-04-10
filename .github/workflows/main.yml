@@ -31,3 +31,9 @@ jobs:
 
       - name: Build application
         run: npm --prefix ./traffic-information-app run build
+
+      - name: Run tests
+        run: npm --prefix ./traffic-information-app test -- --configuration=ci
+
+      - name: Run E2E tests
+        run: npm --prefix ./traffic-information-app run e2e -- --configuration=ci

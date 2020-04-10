@@ -13,7 +13,10 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+    chromeOptions: {
+      binary: require('protractor').browser
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
