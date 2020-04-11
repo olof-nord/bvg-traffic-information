@@ -23,6 +23,8 @@
     "test": "ng test",
     "test:dev": "ng test --watch=true",
     "lint": "ng lint",
+    "list_webdrivers": "node_modules/protractor/bin/webdriver-manager status",
+    "pree2e": "npm run list_webdrivers && node_modules/protractor/bin/webdriver-manager update --versions.chrome=80.0.3987.106 --gecko false --standalone false",
     "e2e": "ng e2e"
   },
   "dependencies": {
@@ -49,7 +51,7 @@
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.4.1",
+    "karma": "^5.0.1",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
