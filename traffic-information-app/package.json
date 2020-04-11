@@ -23,8 +23,7 @@
     "test": "ng test",
     "test:dev": "ng test --watch=true",
     "lint": "ng lint",
-    "list_webdrivers": "node_modules/protractor/bin/webdriver-manager status",
-    "pree2e": "npm run list_webdrivers && node_modules/protractor/bin/webdriver-manager update --versions.chrome=80.0.3987.106 --gecko false --standalone false",
+    "pree2e": "node_modules/protractor/bin/webdriver-manager update --versions.chrome=80.0.3987.106 --gecko false --standalone false",
     "e2e": "ng e2e"
   },
   "dependencies": {
