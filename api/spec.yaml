@@ -102,7 +102,7 @@ paths:
         "200":
           description: "successful operation"
           content:
-            '*/*':
+            application/json:
               schema:
                 type: "array"
                 items:
@@ -202,6 +202,8 @@ components:
         sev:
           type: "string"
         textIntAuswirkung:
+          type: "string"
+        barrierefrei:
           type: "string"
         umfahrung:
           type: "string"

@@ -1,1 +1,8 @@
 <h1 class="text-center"><a href="/">BVG Traffic Information</a></h1>
+
+<div *ngFor="let message of messages$ | async">
+  <h2>{{ message?.meldungsId }}</h2>
+  <p>
+    {{ message?.linie }}
+  </p>
+</div>

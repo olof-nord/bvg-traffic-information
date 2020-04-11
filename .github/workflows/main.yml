@@ -31,6 +31,8 @@ jobs:
 
       - name: Build application
         run: npm --prefix ./traffic-information-app run build
+        env:
+          BVG_API_KEY: ${{ secrets.BVG_API_KEY }}
 
       - name: Run tests
         run: npm --prefix ./traffic-information-app test -- --configuration=ci

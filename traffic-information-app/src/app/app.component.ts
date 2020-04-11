@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { FgiService } from '@api/services';
+import { Message } from '@api/models';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() { }
+  messages$: Observable<Array<Message>>;
 
-  ngOnInit(): void {}
+  constructor(private fgiService: FgiService) { }
+
+  ngOnInit(): void {
+    this.messages$ = this.fgiService.getFgi({ datum: '2018-02-27T12:50:47' });
+  }
 
 }

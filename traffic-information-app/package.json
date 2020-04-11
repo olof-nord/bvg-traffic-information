@@ -16,10 +16,14 @@
   ],
   "scripts": {
     "clean": "rimraf api/*",
-    "prestart": "npm run clean",
+    "generate-env": "ts-node etc/generate-env.ts",
+
+    "prestart": "npm run clean && npm run generate-env dev",
     "start": "ng-openapi-gen && ng serve --open",
-    "prebuild": "npm run clean",
-    "build": "ng-openapi-gen && ng build",
+
+    "prebuild": "npm run clean && npm run generate-env prod",
+    "build": "ng-openapi-gen && ng build --prod --no-progress",
+
     "test": "ng test",
     "test:dev": "ng test --watch=true",
     "lint": "ng lint",
@@ -35,6 +39,7 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
+    "dotenv": "^8.2.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

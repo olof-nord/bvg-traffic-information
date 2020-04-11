@@ -6,9 +6,12 @@ This project should make use of the [BVG Verkehrsmeldungen API](https://www.bvg.
 - Angular 9
 - [ng-openapi-gen](https://github.com/cyclosproject/ng-openapi-gen) for API client generation
 - [puppeteer](https://github.com/puppeteer/puppeteer) for running tests with a headless Chromium
+- [dotenv](https://github.com/motdotla/dotenv) for .env file support
 
 ## BVG Verkehrsmeldungen API
 - The endpoint used is specified in [the API specification](./api/spec.yaml).
+- Note that a BVG API token is required for authentication. 
+- This could be put in a `.env` file in the root folder with a key `BVG_API_KEY=xyz` specified.
 
 ## Start
 Running the app in dev mode including hot module reloading:  
