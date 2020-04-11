@@ -8,7 +8,7 @@ import { ApiModule } from '@api/api.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApiKeyInterceptor } from "@app/config/api-key.interceptor";
+import { ApiKeyInterceptor } from '@app/config/api-key.interceptor';
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,

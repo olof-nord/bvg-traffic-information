@@ -13,7 +13,7 @@ export class ApiKeyInterceptor implements HttpInterceptor {
     // Add the BVG API key to each request
     request = request.clone({
       setParams: {
-        'apikey': environment.BVG_API_KEY
+        apikey: environment.BVG_API_KEY
       }
     });
 
