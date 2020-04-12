@@ -15,7 +15,7 @@
     "bvg"
   ],
   "scripts": {
-    "clean": "rimraf api/* src/environments/*",
+    "clean": "rimraf api/* src/environments",
     "generate-env": "ts-node etc/generate-env.ts",
     "prestart": "npm run clean && npm run generate-env dev",
     "start": "ng-openapi-gen && ng serve",

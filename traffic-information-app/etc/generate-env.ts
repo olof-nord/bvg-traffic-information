@@ -9,7 +9,6 @@ let targetPath = './src/environments/environment.ts';
 let isProd = false;
 
 if(process.argv[2] == 'prod') {
-  targetPath = './src/environments/environment.prod.ts';
   isProd = true;
 }
 
