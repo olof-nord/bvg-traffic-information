@@ -6,7 +6,9 @@
       "@api/*":  ["../api/*"],
       "@app/*": ["app/*"],
       "@assets/*": ["assets/*"],
-      "@environments/*": ["environments/*"]
+      "@environments/*": ["environments/*"],
+
+      "@config/*": ["app/config/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -23,7 +25,7 @@
     ]
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
+    "strictTemplates": true,
     "strictInjectionParameters": true
   }
 }

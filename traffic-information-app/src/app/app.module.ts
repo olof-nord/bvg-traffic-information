@@ -5,10 +5,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ApiModule } from '@api/api.module';
+import { ApiKeyInterceptor } from '@config/api-key.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApiKeyInterceptor } from '@app/config/api-key.interceptor';
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
