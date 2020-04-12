@@ -25,6 +25,12 @@ export const environment = {
 };
 `;
 
+fs.mkdir('./src/environments', function (err) {
+  if (err) {
+    throw console.error(err);
+  }
+});
+
 fs.writeFile(targetPath, envConfigFile, function (err) {
   if (err) {
     throw console.error(err);

@@ -15,15 +15,12 @@
     "bvg"
   ],
   "scripts": {
-    "clean": "rimraf api/*",
+    "clean": "rimraf api/* src/environments/*",
     "generate-env": "ts-node etc/generate-env.ts",
-
     "prestart": "npm run clean && npm run generate-env dev",
-    "start": "ng-openapi-gen && ng serve --open",
-
+    "start": "ng-openapi-gen && ng serve",
     "prebuild": "npm run clean && npm run generate-env prod",
-    "build": "ng-openapi-gen && ng build --prod --no-progress",
-
+    "build": "ng-openapi-gen && ng build --prod",
     "test": "ng test",
     "test:dev": "ng test --watch=true",
     "lint": "ng lint",
