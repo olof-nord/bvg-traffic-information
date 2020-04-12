@@ -132,6 +132,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "traffic-information-app"
+    }
+  },
+  "defaultProject": "traffic-information-app",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

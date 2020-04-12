@@ -6,3 +6,9 @@
     {{ message?.linie }}
   </p>
 </div>
+
+<div *ngIf="messagesLoading$ | async">
+  <p>
+    Traffic information is loading
+  </p>
+</div>

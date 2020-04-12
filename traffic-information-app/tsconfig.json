@@ -8,6 +8,11 @@
       "@assets/*": ["assets/*"],
       "@environments/*": ["environments/*"],
 
+      "@store/actions/*": ["app/store/actions/*"],
+      "@store/effects/*": ["app/store/effects/*"],
+      "@store/reducers/*": ["app/store/reducers/*"],
+      "@store/selectors/*": ["app/store/selectors/*"],
+
       "@config/*": ["app/config/*"]
     },
     "outDir": "./dist/out-tsc",

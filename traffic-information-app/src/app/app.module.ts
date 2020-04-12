@@ -7,6 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiModule } from '@api/api.module';
 import { ApiKeyInterceptor } from '@config/api-key.interceptor';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+
+import { reducers, metaReducers } from '@store/reducers/index';
+import { MessageEffects } from '@store/effects/message.effects';
+
+import { environment } from '@environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -24,7 +32,16 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ApiModule
+    ApiModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      }
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([MessageEffects])
   ],
   providers: [
     ApiKeyInterceptor,

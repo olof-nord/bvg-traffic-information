@@ -1,12 +1,14 @@
 # BVG traffic information app
 
-This project should make use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen) and display the information in an appropriate form.
+This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)
+to display the information in an appropriate form.
 
 ## Tooling
 - Angular 9
 - [ng-openapi-gen](https://github.com/cyclosproject/ng-openapi-gen) for API client generation
 - [puppeteer](https://github.com/puppeteer/puppeteer) for running tests with a headless Chromium
 - [dotenv](https://github.com/motdotla/dotenv) for .env file support
+- [ngrx](https://github.com/ngrx/platform) for state management
 
 ## BVG Verkehrsmeldungen API
 - The endpoint used is specified in [the API specification](./api/spec.yaml).
