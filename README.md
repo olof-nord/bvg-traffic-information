@@ -1,7 +1,8 @@
 # BVG traffic information app
+This project aims to visualise available transport information in Berlin.
 
-This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)
-to display the information in an appropriate form.
+## BVG
+Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main public transport company of Berlin, Germany.
 
 ## Tooling
 - [Angular](https://github.com/angular/angular) as a framework for building the web application
@@ -11,6 +12,7 @@ to display the information in an appropriate form.
 - [ngrx](https://github.com/ngrx/platform) for state management
 
 ## BVG Verkehrsmeldungen API
+- This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)
 - The endpoint used is specified in [the API specification](./api/spec.yaml).
 - Note that a BVG API token is required for authentication. 
 - This could be put in a `.env` file in the root folder with a key `BVG_API_KEY=xyz` specified.
