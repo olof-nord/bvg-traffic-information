@@ -1,6 +1,7 @@
 import { reducer, initialState } from './message.reducer';
 
 import * as messageActions from '@store/actions/message.actions';
+import { Message } from '@api/models/message';
 
 describe('Message Reducer', () => {
   it('an unknown action should return the previous state', () => {
@@ -25,5 +26,21 @@ describe('Message Reducer', () => {
     expect(state.messages).toEqual([]);
     expect(state.error).toEqual('Could not fetch BVG traffic information');
   });
+
+  it('loadMessagesSuccess action should return the messages', () => {
+    const message: Message = {
+      meldungsId: 'BVG174260',
+      grundFahrplanabweichung: 0,
+      prioritaet: 0,
+      type: 0,
+      verkehrsmittel: 0
+    };
+    const state = reducer(initialState, messageActions.loadMessagesSuccess({ messages: [message] }));
+
+    expect(state.isLoading).toEqual(false);
+    expect(state.messages).toEqual([message]);
+    expect(state.error).toEqual(null);
+  });
+
 
 });
