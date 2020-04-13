@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { metaReducers, reducers} from '@app/store/reducers';
 
 import { AppComponent } from './app.component';
+import { DashboardComponent } from '@dashboard/dashboard.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -14,7 +15,8 @@ describe('AppComponent', () => {
         StoreModule.forRoot(reducers, { metaReducers })
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        DashboardComponent
       ],
     }).compileComponents();
   }));
@@ -28,7 +30,7 @@ describe('AppComponent', () => {
   it(`should have as title 'BVG Traffic Information'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const nativeElement = fixture.nativeElement;
-    expect(nativeElement.querySelector('h1').textContent).toEqual('BVG Traffic Information');
+    expect(nativeElement.querySelector('h1').textContent).toEqual('BVG Traffic Status');
   });
 
 });

@@ -107,6 +107,8 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/Message"
+        "400":
+          description: "unsuccessful operation"
 components:
   securitySchemes:
     ApiKey:

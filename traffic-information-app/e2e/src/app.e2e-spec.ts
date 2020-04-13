@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toContain('BVG Traffic Information');
+    expect(page.getTitleText()).toContain('BVG Traffic Status');
   });
 
   afterEach(async () => {

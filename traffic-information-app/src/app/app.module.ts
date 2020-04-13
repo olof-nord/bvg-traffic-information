@@ -5,7 +5,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ApiModule } from '@api/api.module';
-import { ApiKeyInterceptor } from '@config/api-key.interceptor';
+import { ApiKeyInterceptor } from '@config/interceptor/api-key.interceptor';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -17,6 +17,7 @@ import { MessageEffects } from '@store/effects/message.effects';
 import { environment } from '@environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from '@dashboard/dashboard.component';
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -26,7 +27,8 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

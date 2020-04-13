@@ -13,7 +13,12 @@
       "@store/reducers/*": ["app/store/reducers/*"],
       "@store/selectors/*": ["app/store/selectors/*"],
 
-      "@config/*": ["app/config/*"]
+      "@config/*": ["app/config/*"],
+      "@config/bvg/*": ["app/config/bvg/*"],
+      "@config/interceptor*": ["app/config/interceptor/*"],
+
+      "@dashboard/*": ["app/dashboard/*"]
+
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

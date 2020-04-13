@@ -1,0 +1,18 @@
+<div *ngFor="let message of messages$ | async">
+  <h2>{{ message?.meldungsId }}</h2>
+  <p>
+    {{ message?.linie }}
+  </p>
+  <p>
+    {{ message?.datum }}
+  </p>
+  <p>
+    {{ message?.textIntUrsache }}
+  </p>
+</div>
+
+<div *ngIf="messagesLoading$ | async">
+  <p>
+    Traffic information is loading
+  </p>
+</div>
