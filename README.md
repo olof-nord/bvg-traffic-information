@@ -1,5 +1,5 @@
 # BVG traffic information app
-This project aims to visualise available transport information in Berlin.
+This project aims to visualise and present bus, tram, subway and ferry public transport information in Berlin.
 
 ## BVG
 Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main public transport company of Berlin, Germany.
