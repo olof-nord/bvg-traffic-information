@@ -10,6 +10,7 @@ Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main pu
 - [puppeteer](https://github.com/puppeteer/puppeteer) for running tests with a headless Chromium
 - [dotenv](https://github.com/motdotla/dotenv) for .env file support
 - [ngrx](https://github.com/ngrx/platform) for state management
+- [moment](https://github.com/moment/moment) for time management
 
 ## BVG Verkehrsmeldungen API
 - This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)

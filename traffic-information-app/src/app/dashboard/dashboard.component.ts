@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { Message } from '@api/models';
 
 import { State } from '@app/store/reducers';
-import { selectTramMessages, selectMessagesLoading } from '@store/selectors/message.selectors';
+import { selectValidMessagesForDay, selectMessagesLoading } from '@store/selectors/message.selectors';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   constructor(private store$: Store<State>) { }
 
   ngOnInit(): void {
-    this.messages$ = this.store$.pipe(select(selectTramMessages));
+    this.messages$ = this.store$.pipe(select(selectValidMessagesForDay(new Date().toString())));
     this.messagesLoading$ = this.store$.pipe(select(selectMessagesLoading));
   }
 

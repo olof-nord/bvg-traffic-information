@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import * as moment from 'moment';
 
 import * as fromMessages from '@store/reducers/message.reducer';
 
@@ -37,6 +38,20 @@ export const selectBusMessages = createSelector(
 export const selectFerryMessages = createSelector(
   selectMessagesState,
   state => state.messages.filter(message => ferryLines.includes(message.linie))
+);
+
+export const selectMessagesForLine = (line: string) => createSelector(
+  selectMessagesState,
+  state => state.messages.filter(message => message.linie === line)
+);
+
+// See Moment.js isBetween description here:
+// https://momentjs.com/docs/#/query/is-between/
+export const selectValidMessagesForDay = (date: string) => createSelector(
+  selectMessagesState,
+  state => state.messages.filter(message =>
+    moment(date).isBetween(message.gueltigVonDatum, message?.gueltigBisDatum, 'day', '[]')
+  )
 );
 
 export const selectMessagesError = createSelector(
