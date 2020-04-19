@@ -18,7 +18,8 @@
       "@config/interceptor*": ["app/config/interceptor/*"],
 
       "@dashboard/*": ["app/dashboard/*"],
-      "@header/*": ["app/header/*"]
+      "@header/*": ["app/header/*"],
+      "@breadcrumb/*": ["app/breadcrumb/*"]
 
     },
     "outDir": "./dist/out-tsc",

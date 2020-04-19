@@ -1,3 +1,7 @@
+<app-breadcrumb [items]="['Home', 'Travel Information', 'Traffic status']" ></app-breadcrumb>
+
+<h1 class="text-center mt-2">Traffic Status</h1>
+
 <div *ngFor="let message of messages$ | async">
   <h2>{{ message?.meldungsId }}</h2>
   <p>

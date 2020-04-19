@@ -7,6 +7,7 @@ import { metaReducers, reducers} from '@app/store/reducers';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from '@dashboard/dashboard.component';
 import { HeaderComponent } from '@header/header.component';
+import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -18,7 +19,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         DashboardComponent,
-        HeaderComponent
+        HeaderComponent,
+        BreadcrumbComponent
       ],
     }).compileComponents();
   }));
@@ -27,12 +29,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'Traffic Status'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const nativeElement = fixture.nativeElement;
-    expect(nativeElement.querySelector('h1').textContent).toEqual('Traffic Status');
   });
 
 });
