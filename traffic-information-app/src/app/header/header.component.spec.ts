@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -8,7 +10,12 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      imports: [
+        NgbCollapseModule
+      ],
+      declarations: [
+        HeaderComponent
+      ]
     });
 
     fixture = TestBed.createComponent(HeaderComponent);

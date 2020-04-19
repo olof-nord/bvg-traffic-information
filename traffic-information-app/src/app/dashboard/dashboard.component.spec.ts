@@ -3,6 +3,8 @@ import { StoreModule } from '@ngrx/store';
 
 import { metaReducers, reducers} from '@app/store/reducers';
 
+import { NgbAlertModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { DashboardComponent } from './dashboard.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
 
@@ -13,7 +15,9 @@ describe('DashboardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        StoreModule.forRoot(reducers, { metaReducers })
+        StoreModule.forRoot(reducers, { metaReducers }),
+        NgbProgressbarModule,
+        NgbAlertModule
       ],
       declarations: [
         DashboardComponent,

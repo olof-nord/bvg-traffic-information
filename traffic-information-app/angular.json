@@ -30,16 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              {
-                "bundleName": "jQuery JS",
-                "input": "./node_modules/jquery/dist/jquery.min.js"
-              },
-              {
-                "bundleName": "Bootstrap JS",
-                "input": "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-              }
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

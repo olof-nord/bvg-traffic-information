@@ -12,7 +12,7 @@ Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main pu
 - [ngrx](https://github.com/ngrx/platform) for state management
 - [moment](https://github.com/moment/moment) for time management
 - [bootstrap](https://github.com/twbs/bootstrap) for design and style management
-- [jQuery](https://github.com/jquery/jquery) for some built-in bootstrap functionality
+- [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) for Angular bootstrap components
 
 ## BVG Verkehrsmeldungen API
 - This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)

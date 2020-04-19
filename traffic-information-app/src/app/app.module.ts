@@ -11,6 +11,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { reducers, metaReducers } from '@store/reducers/index';
 import { MessageEffects } from '@store/effects/message.effects';
 
@@ -39,6 +41,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     AppRoutingModule,
     HttpClientModule,
     ApiModule,
+    NgbModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

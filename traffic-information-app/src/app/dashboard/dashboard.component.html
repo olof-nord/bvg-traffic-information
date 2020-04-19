@@ -29,4 +29,16 @@
   <p>
     Traffic information is loading
   </p>
+  <p>
+    <ngb-progressbar type="warning" [value]="100" [striped]="true" [animated]="true">
+    </ngb-progressbar>
+  </p>
+</div>
+
+<div *ngIf="messagesError$ | async as error">
+  <p>
+    <ngb-alert type="danger" [dismissible]="false">
+      An error occurred: {{ error }}
+    </ngb-alert>
+  </p>
 </div>
