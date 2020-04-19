@@ -46,6 +46,11 @@ export const selectMessagesForLine = (line: string) => createSelector(
   state => state.messages.filter(message => message.linie === line)
 );
 
+export const selectValidMessagesForLineAndDate = (line: string, date: string) => createSelector(
+  selectMessagesForLine(line),
+  messages => messages.filter(message => isMessageBetweenFilter(date, message))
+);
+
 export const selectAllValidMessagesForDate = (date: string) => createSelector(
   selectMessagesState,
   state => state.messages.filter(message => isMessageBetweenFilter(date, message))

@@ -7,7 +7,8 @@ import { NgbAlertModule, NgbNavModule, NgbProgressbarModule } from '@ng-bootstra
 
 import { DashboardComponent } from './dashboard.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
-import { MessagesComponent } from '@message/messages.component';
+import { LinesComponent } from '@lines/lines.component';
+import { LineSummaryComponent } from '@line-summary/line-summary.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -24,7 +25,8 @@ describe('DashboardComponent', () => {
       declarations: [
         DashboardComponent,
         BreadcrumbComponent,
-        MessagesComponent
+        LinesComponent,
+        LineSummaryComponent
       ]
     });
 

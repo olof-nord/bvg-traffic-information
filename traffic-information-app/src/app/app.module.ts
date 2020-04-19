@@ -22,7 +22,9 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from '@dashboard/dashboard.component';
 import { HeaderComponent } from '@header/header.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
-import { MessagesComponent } from '@message/messages.component';
+import { MessagesComponent } from '@messages/messages.component';
+import { LinesComponent } from '@lines/lines.component';
+import { LineSummaryComponent } from '@line-summary/line-summary.component';
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -36,7 +38,9 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     DashboardComponent,
     HeaderComponent,
     BreadcrumbComponent,
-    MessagesComponent
+    MessagesComponent,
+    LinesComponent,
+    LineSummaryComponent
   ],
   imports: [
     BrowserModule,

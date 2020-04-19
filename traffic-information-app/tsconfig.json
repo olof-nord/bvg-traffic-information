@@ -20,7 +20,9 @@
       "@dashboard/*": ["app/dashboard/*"],
       "@header/*": ["app/header/*"],
       "@breadcrumb/*": ["app/breadcrumb/*"],
-      "@message/*": ["app/message/*"]
+      "@messages/*": ["app/messages/*"],
+      "@lines/*": ["app/lines/*"],
+      "@line-summary/*": ["app/line-summary/*"]
 
     },
     "outDir": "./dist/out-tsc",

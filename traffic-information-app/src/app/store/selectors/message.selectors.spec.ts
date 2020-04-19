@@ -12,7 +12,8 @@ import {
   selectAllValidMessagesForDate,
   selectValidBusMessagesForDate,
   selectValidTramMessagesForDate,
-  selectValidUndergroundMessagesForDate
+  selectValidUndergroundMessagesForDate,
+  selectValidMessagesForLineAndDate
 } from '@store/selectors/message.selectors';
 import { Message } from '@api/models';
 
@@ -261,6 +262,28 @@ describe('Message Selectors', () => {
     );
 
     expect(mockStore.select(selectMessagesForLine('U1'))
+      .subscribe(result => {
+        return expect(result).toEqual([ ubahnMessage ]);
+      })
+    );
+
+  });
+
+  it('should correctly select all traffic status messages for a specific line and date', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, ubahnMessage, tramMessage ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectValidMessagesForLineAndDate('U1', '2020-01-01'))
+      .subscribe(result => {
+        return expect(result).toEqual([]);
+      })
+    );
+
+    expect(mockStore.select(selectValidMessagesForLineAndDate('U1', '2020-04-16'))
       .subscribe(result => {
         return expect(result).toEqual([ ubahnMessage ]);
       })
