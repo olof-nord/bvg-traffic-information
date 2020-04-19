@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 
-import { Message } from '@api/models';
-
 import { State } from '@app/store/reducers';
 import {
-  selectValidMessagesForDay,
   selectMessagesLoading,
   selectMessagesError
 } from '@store/selectors/message.selectors';
@@ -18,14 +15,12 @@ import {
 })
 export class DashboardComponent implements OnInit {
 
-  messages$: Observable<Array<Message>>;
   messagesLoading$: Observable<boolean>;
   messagesError$: Observable<string>;
 
   constructor(private store$: Store<State>) { }
 
   ngOnInit(): void {
-    this.messages$ = this.store$.pipe(select(selectValidMessagesForDay(new Date().toString())));
     this.messagesLoading$ = this.store$.pipe(select(selectMessagesLoading));
     this.messagesError$ = this.store$.pipe(select(selectMessagesError));
   }

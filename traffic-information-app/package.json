@@ -12,6 +12,7 @@
   },
   "keywords": [
     "angular",
+    "ngrx",
     "bvg"
   ],
   "scripts": {

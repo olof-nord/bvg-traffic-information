@@ -2,31 +2,36 @@
 
 <h1 class="text-center mt-2">Traffic Status</h1>
 
-<div *ngFor="let message of messages$ | async">
-  <h2>{{ message?.meldungsId }}</h2>
-  <p>
-    Line: {{ message?.linie }}
-  </p>
-  <p>
-    Reported at: {{ message?.datum }}
-  </p>
-  <p>
-    Reason: {{ message?.textIntUrsache }}
-  </p>
-  <p>
-    Impact: {{ message?.textIntAuswirkung }}
-  </p>
-  <p>
-    Valid from: {{ message?.gueltigVonDatum }}
-  </p>
-  <p *ngIf="message?.gueltigBisDatum">
-    Valid to: {{ message?.gueltigBisDatum }}
-  </p>
-
-</div>
+<nav ngbNav #nav="ngbNav" class="nav-tabs">
+  <ng-container ngbNavItem>
+    <a ngbNavLink>Underground</a>
+    <ng-template ngbNavContent>
+      <app-messages type="underground"></app-messages>
+    </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem>
+    <a ngbNavLink>Tram</a>
+    <ng-template ngbNavContent>
+      <app-messages type="tram"></app-messages>
+    </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem>
+    <a ngbNavLink>Bus</a>
+    <ng-template ngbNavContent>
+      <app-messages type="bus"></app-messages>
+    </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem>
+    <a ngbNavLink>Ferry</a>
+    <ng-template ngbNavContent>
+      <app-messages type="ferry"></app-messages>
+    </ng-template>
+  </ng-container>
+</nav>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
 
 <div *ngIf="messagesLoading$ | async">
-  <p>
+  <p class="text-center">
     Traffic information is loading
   </p>
   <p>
@@ -42,3 +47,5 @@
     </ngb-alert>
   </p>
 </div>
+
+

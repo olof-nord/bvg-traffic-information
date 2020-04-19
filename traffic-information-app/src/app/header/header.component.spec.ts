@@ -36,7 +36,7 @@ describe('HeaderComponent', () => {
 
   it('should contain the six elements', () => {
     expect(fixture.nativeElement.querySelectorAll('.nav-item').length)
-      .toBeGreaterThanOrEqual(6);
+      .toEqual(6);
   });
 
 });

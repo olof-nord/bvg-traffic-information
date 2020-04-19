@@ -19,7 +19,8 @@
 
       "@dashboard/*": ["app/dashboard/*"],
       "@header/*": ["app/header/*"],
-      "@breadcrumb/*": ["app/breadcrumb/*"]
+      "@breadcrumb/*": ["app/breadcrumb/*"],
+      "@message/*": ["app/message/*"]
 
     },
     "outDir": "./dist/out-tsc",

@@ -20,6 +20,6 @@ describe('BreadcrumbComponent', () => {
 
   it('should contain the elements given as input', () => {
     expect(fixture.nativeElement.querySelectorAll('.breadcrumb-item').length)
-      .toBeGreaterThanOrEqual(3);
+      .toEqual(3);
   });
 });

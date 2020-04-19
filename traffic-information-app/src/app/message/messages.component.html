@@ -1,0 +1,25 @@
+<div *ngFor="let message of messages$ | async">
+  <h2>{{ message?.meldungsId }}</h2>
+  <p>
+    Line: {{ message?.linie }}
+  </p>
+  <p>
+    Reported at: {{ message?.datum }}
+  </p>
+  <p>
+    Reason: {{ message?.textIntUrsache }}
+  </p>
+  <p>
+    Impact: {{ message?.textIntAuswirkung }}
+  </p>
+  <p>
+    Valid from: {{ message?.gueltigVonDatum }}
+  </p>
+  <p *ngIf="message?.gueltigBisDatum">
+    Valid to: {{ message?.gueltigBisDatum }}
+  </p>
+</div>
+
+<div *ngIf="noMessagesAvailable()">
+  No messages are available
+</div>

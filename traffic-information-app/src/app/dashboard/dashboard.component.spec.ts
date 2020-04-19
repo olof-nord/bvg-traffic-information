@@ -3,10 +3,11 @@ import { StoreModule } from '@ngrx/store';
 
 import { metaReducers, reducers} from '@app/store/reducers';
 
-import { NgbAlertModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbNavModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DashboardComponent } from './dashboard.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
+import { MessagesComponent } from '@message/messages.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -17,11 +18,13 @@ describe('DashboardComponent', () => {
       imports: [
         StoreModule.forRoot(reducers, { metaReducers }),
         NgbProgressbarModule,
-        NgbAlertModule
+        NgbAlertModule,
+        NgbNavModule
       ],
       declarations: [
         DashboardComponent,
-        BreadcrumbComponent
+        BreadcrumbComponent,
+        MessagesComponent
       ]
     });
 
@@ -33,6 +36,11 @@ describe('DashboardComponent', () => {
 
   it('should have a title', () => {
     expect(fixture.nativeElement.querySelector('h1').textContent).toEqual('Traffic Status');
+  });
+
+  it('should contain the four different traffic type tabs', () => {
+    expect(fixture.nativeElement.querySelectorAll('.nav-item').length)
+      .toEqual(4);
   });
 
 });

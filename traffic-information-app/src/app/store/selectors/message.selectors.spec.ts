@@ -9,7 +9,10 @@ import {
   selectTramMessages,
   selectUndergroundMessages,
   selectMessagesForLine,
-  selectValidMessagesForDay
+  selectAllValidMessagesForDate,
+  selectValidBusMessagesForDate,
+  selectValidTramMessagesForDate,
+  selectValidUndergroundMessagesForDate
 } from '@store/selectors/message.selectors';
 import { Message } from '@api/models';
 
@@ -148,30 +151,96 @@ describe('Message Selectors', () => {
     mockStore.refreshState();
 
     // No messages are valid, as the earlies validFrom/gueltigVonDatum is in 2019
-    expect(mockStore.select(selectValidMessagesForDay('2018-01-01'))
+    expect(mockStore.select(selectAllValidMessagesForDate('2018-01-01'))
       .subscribe(result => {
         return expect(result).toEqual([]);
       })
     );
 
     // Only one message is valid, its validFrom/gueltigVonDatum is in June 2019
-    expect(mockStore.select(selectValidMessagesForDay('2019-08-01'))
+    expect(mockStore.select(selectAllValidMessagesForDate('2019-08-01'))
       .subscribe(result => {
         return expect(result).toEqual([ tramMessage ]);
       })
     );
 
     // Two messages are valid, their validFrom/gueltigVonDatum are in June 2019 and January 2020
-    expect(mockStore.select(selectValidMessagesForDay('2020-02-01'))
+    expect(mockStore.select(selectAllValidMessagesForDate('2020-02-01'))
       .subscribe(result => {
         return expect(result).toEqual([ busMessage, tramMessage ]);
       })
     );
 
     // All three messages are valid
-    expect(mockStore.select(selectValidMessagesForDay('2020-04-16'))
+    expect(mockStore.select(selectAllValidMessagesForDate('2020-04-16'))
       .subscribe(result => {
         return expect(result).toEqual([ busMessage, ubahnMessage, tramMessage ]);
+      })
+    );
+
+  });
+
+  it('should correctly select u-bahn traffic status messages active on a specific date', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, ubahnMessage, tramMessage ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectValidUndergroundMessagesForDate('2020-02-01'))
+      .subscribe(result => {
+        return expect(result).toEqual([]);
+      })
+    );
+
+    expect(mockStore.select(selectValidUndergroundMessagesForDate('2020-04-16'))
+      .subscribe(result => {
+        return expect(result).toEqual([ ubahnMessage ]);
+      })
+    );
+
+  });
+
+  it('should correctly select tram status messages active on a specific date', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, ubahnMessage, tramMessage ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectValidTramMessagesForDate('2018-01-01'))
+      .subscribe(result => {
+        return expect(result).toEqual([]);
+      })
+    );
+
+    expect(mockStore.select(selectValidTramMessagesForDate('2020-04-16'))
+      .subscribe(result => {
+        return expect(result).toEqual([ tramMessage ]);
+      })
+    );
+
+  });
+
+  it('should correctly select bus status messages active on a specific date', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, ubahnMessage, tramMessage ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectValidBusMessagesForDate('2018-01-01'))
+      .subscribe(result => {
+        return expect(result).toEqual([]);
+      })
+    );
+
+    expect(mockStore.select(selectValidBusMessagesForDate('2020-04-16'))
+      .subscribe(result => {
+        return expect(result).toEqual([ busMessage ]);
       })
     );
 
