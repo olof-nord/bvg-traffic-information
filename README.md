@@ -11,6 +11,8 @@ Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main pu
 - [dotenv](https://github.com/motdotla/dotenv) for .env file support
 - [ngrx](https://github.com/ngrx/platform) for state management
 - [moment](https://github.com/moment/moment) for time management
+- [bootstrap](https://github.com/twbs/bootstrap) for design and style management
+- [jQuery](https://github.com/jquery/jquery) for some built-in bootstrap functionality
 
 ## BVG Verkehrsmeldungen API
 - This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)

@@ -17,7 +17,8 @@
       "@config/bvg/*": ["app/config/bvg/*"],
       "@config/interceptor*": ["app/config/interceptor/*"],
 
-      "@dashboard/*": ["app/dashboard/*"]
+      "@dashboard/*": ["app/dashboard/*"],
+      "@header/*": ["app/header/*"]
 
     },
     "outDir": "./dist/out-tsc",

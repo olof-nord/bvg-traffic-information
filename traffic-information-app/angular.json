@@ -28,9 +28,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "bundleName": "Bootstrap CSS",
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "bundleName": "jQuery JS",
+                "input": "./node_modules/jquery/dist/jquery.min.js"
+              },
+              {
+                "bundleName": "Bootstrap JS",
+                "input": "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
