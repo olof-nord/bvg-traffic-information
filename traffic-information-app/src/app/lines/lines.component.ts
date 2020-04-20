@@ -18,7 +18,7 @@ export class LinesComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.type === 'underground') {
-      this.lines = undergroundLines;
+      this.lines = undergroundLines.map(entry => entry.line);
     } else if (this.type === 'tram') {
       this.lines = tramLines;
     } else if (this.type === 'bus') {

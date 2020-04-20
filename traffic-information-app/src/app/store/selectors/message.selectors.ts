@@ -23,7 +23,8 @@ export const selectAllMessages = createSelector(
 
 export const selectUndergroundMessages = createSelector(
   selectMessagesState,
-  state => state.messages.filter(message => undergroundLines.includes(message.linie))
+  state => state.messages.filter(message => undergroundLines.map(entry => entry.line)
+    .includes(message.linie))
 );
 
 export const selectTramMessages = createSelector(

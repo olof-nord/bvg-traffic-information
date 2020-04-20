@@ -30,7 +30,7 @@ describe('LinesComponent', () => {
     component.type = 'underground';
     fixture.detectChanges();
 
-    expect(component.lines).toEqual(undergroundLines);
+    expect(component.lines).toEqual(undergroundLines.map(entry => entry.line));
   });
 
   it('should set the correct tram lines based on the type', () => {

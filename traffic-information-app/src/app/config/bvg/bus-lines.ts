@@ -1,3 +1,5 @@
+export const busColor = '#95276E';
+
 export const busLines = [
   'M11',
   'M19',

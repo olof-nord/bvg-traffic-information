@@ -1,3 +1,5 @@
+export const tramColor = '#BE1414';
+
 export const tramLines = [
   'M1',
   'M2',

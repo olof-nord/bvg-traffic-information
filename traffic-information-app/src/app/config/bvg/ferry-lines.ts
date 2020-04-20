@@ -1,3 +1,5 @@
+export const ferryColor = '#528DBA';
+
 export const ferryLines = [
   'F10',
   'F11',

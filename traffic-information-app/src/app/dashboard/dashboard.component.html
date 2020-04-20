@@ -1,4 +1,4 @@
-<app-breadcrumb [items]="['Home', 'Travel Information', 'Traffic status']" ></app-breadcrumb>
+<app-breadcrumb [items]="['Home', 'Travel information', 'Traffic status']" ></app-breadcrumb>
 
 <h1 class="text-center mt-2">Traffic Status</h1>
 
@@ -28,7 +28,7 @@
     </ng-template>
   </ng-container>
 </nav>
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+<div [ngbNavOutlet]="nav" class="mt-2 container-fluid"></div>
 
 <div *ngIf="messagesLoading$ | async">
   <p class="text-center">
