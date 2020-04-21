@@ -1,12 +1,12 @@
-export interface UndergroundStop {
+export interface UndergroundStation {
   line: string;
-  stops: string[];
+  stations: string[];
 }
 
-export const undergroundStops: UndergroundStop[] = [
+export const undergroundStations: UndergroundStation[] = [
   {
     line: 'U1',
-    stops: [
+    stations: [
       'S+U Warschauer Str.',
       'U Schlesisches Tor',
       'U Görlitzer Bahnhof',
@@ -24,7 +24,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U2',
-    stops: [
+    stations: [
       'S+U Pankow',
       'U Vinetastr.',
       'S+U Schönhauser Allee',
@@ -58,7 +58,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U3',
-    stops: [
+    stations: [
       'S+U Warschauer Str.',
       'U Schlesisches Tor',
       'U Görlitzer Bahnhof',
@@ -87,7 +87,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U4',
-    stops: [
+    stations: [
       'U Nollendorfplatz',
       'U Viktoria-Luise-Platz',
       'U Bayerischer Platz',
@@ -97,7 +97,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U5',
-    stops: [
+    stations: [
       'U Hönow',
       'U Louis-Lewin-Str.',
       'U Hellersdorf',
@@ -122,7 +122,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U55',
-    stops: [
+    stations: [
       'S+U Brandenburger Tor',
       'U Bundestag',
       'S+U Hauptbahnhof'
@@ -130,7 +130,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U6',
-    stops: [
+    stations: [
       'U Alt-Tegel',
       'U Borsigwerke',
       'U Holzhauser Str.',
@@ -164,7 +164,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U7',
-    stops: [
+    stations: [
       'S+U Rathaus Spandau',
       'U Altstadt Spandau',
       'U Zitadelle',
@@ -209,7 +209,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U8',
-    stops: [
+    stations: [
       'S+U Wittenau',
       'U Rathaus Reinickendorf',
       'S+U Karl-Bonhoeffer-Nervenklinik',
@@ -238,7 +238,7 @@ export const undergroundStops: UndergroundStop[] = [
   },
   {
     line: 'U9',
-    stops: [
+    stations: [
       'U Osloer Str.',
       'U Nauener Platz',
       'U Leopoldplatz',
