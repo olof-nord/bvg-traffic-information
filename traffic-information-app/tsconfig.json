@@ -22,7 +22,8 @@
       "@breadcrumb/*": ["app/breadcrumb/*"],
       "@messages/*": ["app/messages/*"],
       "@lines/*": ["app/lines/*"],
-      "@line-summary/*": ["app/line-summary/*"]
+      "@line-summary/*": ["app/line-summary/*"],
+      "@date-selector/*": ["app/date-selector/*"]
 
     },
     "outDir": "./dist/out-tsc",

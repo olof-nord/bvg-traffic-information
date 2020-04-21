@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Provider, forwardRef } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,6 +26,7 @@ import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
 import { MessagesComponent } from '@messages/messages.component';
 import { LinesComponent } from '@lines/lines.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
+import { DateSelectorComponent } from '@date-selector/date-selector.component';
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -40,12 +42,14 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     BreadcrumbComponent,
     MessagesComponent,
     LinesComponent,
-    LineSummaryComponent
+    LineSummaryComponent,
+    DateSelectorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     ApiModule,
     NgbModule,
     StoreModule.forRoot(reducers, {
@@ -55,7 +59,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
         strictActionImmutability: true,
       }
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([MessageEffects])
   ],
   providers: [

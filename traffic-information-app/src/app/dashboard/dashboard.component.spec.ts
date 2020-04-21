@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { metaReducers, reducers} from '@app/store/reducers';
 
@@ -9,6 +10,7 @@ import { DashboardComponent } from './dashboard.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
 import { LinesComponent } from '@lines/lines.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
+import { DateSelectorComponent } from '@date-selector/date-selector.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -20,13 +22,15 @@ describe('DashboardComponent', () => {
         StoreModule.forRoot(reducers, { metaReducers }),
         NgbProgressbarModule,
         NgbAlertModule,
-        NgbNavModule
+        NgbNavModule,
+        ReactiveFormsModule
       ],
       declarations: [
         DashboardComponent,
         BreadcrumbComponent,
         LinesComponent,
-        LineSummaryComponent
+        LineSummaryComponent,
+        DateSelectorComponent
       ]
     });
 

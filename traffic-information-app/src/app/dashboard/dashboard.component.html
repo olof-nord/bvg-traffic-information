@@ -2,7 +2,7 @@
 
 <h1 class="text-center mt-2">Traffic Status</h1>
 
-<nav ngbNav #nav="ngbNav" class="nav-tabs">
+<nav ngbNav #nav="ngbNav" class="nav-tabs nav-fill">
   <ng-container ngbNavItem>
     <a ngbNavLink>Underground</a>
     <ng-template ngbNavContent>
@@ -31,9 +31,9 @@
 <div [ngbNavOutlet]="nav" class="mt-2 container-fluid"></div>
 
 <div *ngIf="messagesLoading$ | async">
-  <p class="text-center">
+  <h2 class="text-center mt-5">
     Traffic information is loading
-  </p>
+  </h2>
   <p>
     <ngb-progressbar type="warning" [value]="100" [striped]="true" [animated]="true">
     </ngb-progressbar>

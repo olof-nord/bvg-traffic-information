@@ -1,0 +1,13 @@
+<form [formGroup]="radioGroupForm" class="row my-2">
+  <div class="btn-group btn-group-toggle col-12 p-0" ngbRadioGroup>
+    <label ngbButtonLabel class="btn btn-outline-dark">
+      <input ngbButton type="radio" value="today" formControlName="selectedTime"> Today
+    </label>
+    <label ngbButtonLabel class="btn btn-outline-dark">
+      <input ngbButton type="radio" value="weekend" formControlName="selectedTime"> This weekend
+    </label>
+    <label ngbButtonLabel class="btn btn-outline-dark">
+      <input ngbButton type="radio" value="future" formControlName="selectedTime"> Future
+    </label>
+  </div>
+</form>

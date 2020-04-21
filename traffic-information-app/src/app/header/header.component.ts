@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   isNavbarCollapsed = true;
+  searchForm: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.searchForm = this.formBuilder.group({
+      searchQuery: ''
+    });
+  }
 
 }

@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { metaReducers, reducers} from '@app/store/reducers';
 
@@ -12,6 +13,7 @@ import { HeaderComponent } from '@header/header.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
 import { MessagesComponent } from '@messages/messages.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
+import { DateSelectorComponent } from '@date-selector/date-selector.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,7 +21,8 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         StoreModule.forRoot(reducers, { metaReducers }),
-        NgbNavModule
+        NgbNavModule,
+        ReactiveFormsModule
       ],
       declarations: [
         AppComponent,
@@ -27,8 +30,9 @@ describe('AppComponent', () => {
         HeaderComponent,
         BreadcrumbComponent,
         MessagesComponent,
-        LineSummaryComponent
-      ],
+        LineSummaryComponent,
+        DateSelectorComponent
+      ]
     }).compileComponents();
   }));
 

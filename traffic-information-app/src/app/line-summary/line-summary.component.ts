@@ -11,6 +11,7 @@ import {
   selectValidMessagesForLineAndDate
 } from '@store/selectors/message.selectors';
 import { undergroundLines, busColor, tramColor, ferryColor } from '@config/bvg';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-line-summary',
@@ -33,7 +34,7 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   constructor(private store$: Store<State>) { }
 
   ngOnInit(): void {
-    const today = new Date().toString();
+    const today = moment().toISOString();
     this.messages$ = this.store$.pipe(select(selectValidMessagesForLineAndDate(this.line, today)));
     this.messagesLoading$ = this.store$.pipe(select(selectMessagesLoading));
   }

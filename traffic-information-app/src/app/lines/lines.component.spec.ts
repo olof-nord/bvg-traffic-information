@@ -1,10 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { metaReducers, reducers } from '@app/store/reducers';
 
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
 import { LinesComponent } from './lines.component';
+import { DateSelectorComponent } from '@date-selector/date-selector.component';
 import { undergroundLines, tramLines, busLines } from '@config/bvg';
 
 describe('LinesComponent', () => {
@@ -14,11 +16,13 @@ describe('LinesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        StoreModule.forRoot(reducers, { metaReducers })
+        StoreModule.forRoot(reducers, { metaReducers }),
+        ReactiveFormsModule
       ],
       declarations: [
         LinesComponent,
-        LineSummaryComponent
+        LineSummaryComponent,
+        DateSelectorComponent
       ]
     })
     .compileComponents();
