@@ -1,10 +1,10 @@
-<app-breadcrumb [items]="['Home', 'Travel information', 'Traffic status']" ></app-breadcrumb>
+<app-breadcrumb [items]="['Home', 'Fahrinfo', 'Verkehrsmeldungen']" ></app-breadcrumb>
 
-<h2 class="mt-2 font-weight-lighter">Traffic Status</h2>
+<h2 class="mt-2 font-weight-lighter">Verkehrsmeldungen</h2>
 
 <nav ngbNav #nav="ngbNav" class="nav-tabs nav-fill">
   <ng-container ngbNavItem>
-    <a ngbNavLink>Underground</a>
+    <a ngbNavLink>U-Bahn</a>
     <ng-template ngbNavContent>
       <app-lines type="underground"></app-lines>
     </ng-template>
@@ -22,7 +22,7 @@
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink>Ferry</a>
+    <a ngbNavLink>Fähre</a>
     <ng-template ngbNavContent>
       <app-lines type="ferry"></app-lines>
     </ng-template>
@@ -32,7 +32,7 @@
 
 <div *ngIf="messagesLoading$ | async">
   <h2 class="text-center mt-5">
-    Traffic information is loading
+    Verkehrsmeldungen werden geladen
   </h2>
   <p>
     <ngb-progressbar type="warning" [value]="100" [striped]="true" [animated]="true">
@@ -43,7 +43,7 @@
 <div *ngIf="messagesError$ | async as error">
   <p>
     <ngb-alert type="danger" [dismissible]="false">
-      An error occurred: {{ error }}
+      Ein Fehler ist passiert: {{ error }}
     </ngb-alert>
   </p>
 </div>

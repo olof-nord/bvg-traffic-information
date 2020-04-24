@@ -41,7 +41,7 @@ describe('DashboardComponent', () => {
   }));
 
   it('should have a title', () => {
-    expect(fixture.nativeElement.querySelector('h2').textContent).toEqual('Traffic Status');
+    expect(fixture.nativeElement.querySelectorAll('h2').length).toBeGreaterThanOrEqual(1);
   });
 
   it('should contain the four different traffic type tabs', () => {

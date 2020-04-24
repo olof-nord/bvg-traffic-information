@@ -9,7 +9,7 @@ import * as messageActions from '@store/actions/message.actions';
 
 @Injectable()
 export class MessageEffects {
-  private errorMessage = 'Could not fetch BVG traffic information';
+  private errorMessage = 'BVG Verkehrsmeldungen konnte nicht abgerufen werden';
 
   constructor(
     private actions$: Actions,

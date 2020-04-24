@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toContain('Traffic Status');
+    expect(page.getTitleText()).toContain('Verkehrsmeldungen');
   });
 
   afterEach(async () => {
