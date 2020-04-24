@@ -1,6 +1,6 @@
 <div class="row border-bottom" *ngFor="let message of messages$ | async">
   <div class="col-1 text-center text-white" [style]="'background-color: ' + getBackgroundColor() ">
-    <span class="align-middle">{{ line }}</span>
+    <span class="align-middle font-weight-bold">{{ line }}</span>
   </div>
   <div class="col-11">
     <span class="align-middle">{{ message?.textIntUrsache }}</span>
@@ -9,9 +9,9 @@
 
 <div class="row border-bottom" *ngIf="noMessagesAvailable()">
   <div class="col-1 text-center text-white" [style]="'background-color: ' + getBackgroundColor() ">
-    <span class="align-middle">{{ line }}</span>
+    <span class="align-middle font-weight-bold">{{ line }}</span>
   </div>
   <div class="col-11">
-    <span class="align-middle">Keine Störungen bekannt</span>
+    <span class="align-middle"></span>
   </div>
 </div>

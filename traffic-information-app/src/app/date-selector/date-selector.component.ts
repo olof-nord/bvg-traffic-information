@@ -14,7 +14,7 @@ export class DateSelectorComponent implements OnInit {
 
   ngOnInit(): void {
     this.radioGroupForm = this.formBuilder.group({
-      selectedTime: ''
+      selectedTime: ['today']
     });
   }
 
