@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { metaReducers, reducers } from '@app/store/reducers';
 
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
@@ -16,8 +18,10 @@ describe('LinesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        StoreModule.forRoot(reducers, { metaReducers }),
-        ReactiveFormsModule
+        FormsModule,
+        FontAwesomeModule,
+        NgbDatepickerModule,
+        StoreModule.forRoot(reducers, { metaReducers })
       ],
       declarations: [
         LinesComponent,

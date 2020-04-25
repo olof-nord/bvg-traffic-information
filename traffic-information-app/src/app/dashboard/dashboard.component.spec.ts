@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { metaReducers, reducers} from '@app/store/reducers';
 
-import { NgbAlertModule, NgbNavModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { DashboardComponent } from './dashboard.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
@@ -20,10 +21,9 @@ describe('DashboardComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         StoreModule.forRoot(reducers, { metaReducers }),
-        NgbProgressbarModule,
-        NgbAlertModule,
-        NgbNavModule,
-        ReactiveFormsModule
+        NgbModule,
+        FormsModule,
+        FontAwesomeModule
       ],
       declarations: [
         DashboardComponent,

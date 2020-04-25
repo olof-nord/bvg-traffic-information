@@ -13,6 +13,8 @@ Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main pu
 - [moment](https://github.com/moment/moment) for time management
 - [bootstrap](https://github.com/twbs/bootstrap) for design and style management
 - [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) for Angular bootstrap components
+- [font-awesome](https://github.com/FortAwesome/Font-Awesome) for icons
+- [angular-fontawesome](https://github.com/FortAwesome/angular-fontawesome) for Angular icon components
 
 ## BVG Verkehrsmeldungen API
 - This project makes use of the [BVG Verkehrsmeldungen API](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen)

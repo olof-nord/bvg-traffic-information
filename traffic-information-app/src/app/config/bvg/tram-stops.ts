@@ -350,5 +350,38 @@ export const tramStops: TramStop[] = [
       'S Schöneweide',
       'S Schöneweide/Sterndamm'
     ]
+  },
+  {
+    line: '12',
+    stops: [
+      'Pasedagplatz',
+      'Berliner Allee/Rennbahnstr.',
+      'Falkenberger Str./Berliner Allee',
+      'Weißer See',
+      'Albertinenstr.',
+      'Antonplatz',
+      'Behaimstr.',
+      'Friesickestr.',
+      'Gustav-Adolf-Str./Langhansstr.',
+      'Prenzlauer Allee/Ostseestr.',
+      'Stahlheimer Str./Wisbyer Str.',
+      'Humannplatz',
+      'Stargarder Str.',
+      'Raumerstr.',
+      'U Eberswalder Str./Pappelallee',
+      'U Eberswalder Str.',
+      'Schwedter Str.',
+      'Zionskirchplatz',
+      'Brunnenstr./Invalidenstr.',
+      'Pappelplatz',
+      'S Nordbahnhof',
+      'U Naturkundemuseum',
+      'Torstr./U Oranienburger Tor',
+      'U Oranienburger Tor',
+      'S+U Friedrichstr.',
+      'Universitätsstr.',
+      'Georgenstr./Am Kupfergraben',
+      'Am Kupfergraben'
+    ]
   }
 ];

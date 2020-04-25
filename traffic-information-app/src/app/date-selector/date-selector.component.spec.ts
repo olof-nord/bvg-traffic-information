@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 import { DateSelectorComponent } from './date-selector.component';
 
@@ -10,7 +13,9 @@ describe('TimeSelectorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        ReactiveFormsModule
+        FormsModule,
+        FontAwesomeModule,
+        NgbDatepickerModule
       ],
       declarations: [
         DateSelectorComponent
@@ -25,6 +30,6 @@ describe('TimeSelectorComponent', () => {
 
   it('should contain the three elements', () => {
     expect(fixture.nativeElement.querySelectorAll('.btn').length)
-      .toEqual(3);
+      .toEqual(1);
   });
 });

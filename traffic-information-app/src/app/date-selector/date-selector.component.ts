@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-date-selector',
@@ -8,14 +9,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class DateSelectorComponent implements OnInit {
 
-  radioGroupForm: FormGroup;
+  selectedDate: NgbDateStruct;
+  faCalendarAlt = faCalendarAlt;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private calendar: NgbCalendar) { }
 
   ngOnInit(): void {
-    this.radioGroupForm = this.formBuilder.group({
-      selectedTime: ['today']
-    });
+    this.selectedDate = this.calendar.getToday();
   }
 
 }
