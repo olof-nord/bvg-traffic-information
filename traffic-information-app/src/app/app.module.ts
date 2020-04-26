@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import localeDeExtra from '@angular/common/locales/extra/de';
 
 import { ApiModule } from '@api/api.module';
 import { ApiKeyInterceptor } from '@config/interceptor/api-key.interceptor';
@@ -26,12 +27,12 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from '@dashboard/dashboard.component';
 import { HeaderComponent } from '@header/header.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
-import { MessagesComponent } from '@messages/messages.component';
+import { MessageComponent } from '@message/message.component';
 import { LinesComponent } from '@lines/lines.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
 import { DateSelectorComponent } from '@date-selector/date-selector.component';
 
-registerLocaleData(localeDe, 'de-DE');
+registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -45,7 +46,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     DashboardComponent,
     HeaderComponent,
     BreadcrumbComponent,
-    MessagesComponent,
+    MessageComponent,
     LinesComponent,
     LineSummaryComponent,
     DateSelectorComponent

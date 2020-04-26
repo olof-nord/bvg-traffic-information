@@ -20,7 +20,7 @@
       "@dashboard/*": ["app/dashboard/*"],
       "@header/*": ["app/header/*"],
       "@breadcrumb/*": ["app/breadcrumb/*"],
-      "@messages/*": ["app/messages/*"],
+      "@message/*": ["app/message/*"],
       "@lines/*": ["app/lines/*"],
       "@line-summary/*": ["app/line-summary/*"],
       "@date-selector/*": ["app/date-selector/*"]

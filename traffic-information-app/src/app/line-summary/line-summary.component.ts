@@ -29,6 +29,8 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   messages$: Observable<Array<Message>>;
   messagesLoading$: Observable<boolean>;
 
+  isCollapsed = true;
+
   private subscriptions: Subscription = new Subscription();
 
   constructor(private store$: Store<State>) { }

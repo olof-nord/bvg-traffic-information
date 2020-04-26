@@ -1,0 +1,14 @@
+<p class="bvg-impact">
+  {{ message?.textIntAuswirkung }}
+</p>
+<p class="bvg-reported-at">
+  Gemeldet am: {{ message?.datum | date:'shortDate':'de':'de-DE' }}
+</p>
+<p class="bvg-valid-from bvg-valid-to">
+  <span>
+    Gültig von: {{ message?.gueltigVonDatum | date:'shortDate':'de':'de-DE'}}
+  </span>
+  <span *ngIf="message?.gueltigBisDatum">
+    Gültig bis: {{ message?.gueltigBisDatum | date:'shortDate':'de':'de-DE'}}
+  </span>
+</p>

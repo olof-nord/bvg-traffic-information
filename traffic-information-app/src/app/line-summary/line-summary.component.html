@@ -3,7 +3,14 @@
     <span class="align-middle font-weight-bold">{{ line }}</span>
   </div>
   <div class="col-11">
-    <span class="align-middle">{{ message?.textIntUrsache }}</span>
+    <a href="#" class="text-decoration-none text-dark" (click)="isCollapsed = !isCollapsed"
+       [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage">
+      {{ message?.textIntUrsache }}
+    </a>
+
+    <div id="collapseMessage" [ngbCollapse]="isCollapsed">
+      <app-message [message]="message"></app-message>
+    </div>
   </div>
 </div>
 
