@@ -3,7 +3,7 @@ import { ferryLines, ferryColor } from './ferry-lines';
 import { ferryStops } from './ferry-stops';
 import { tramLines, tramColor } from './tram-lines';
 import { tramStops } from './tram-stops';
-import { undergroundLines } from './underground-lines';
+import { undergroundLines, undergroundColor } from './underground-lines';
 import { undergroundStations } from './underground-stations';
 
 export {
@@ -16,5 +16,6 @@ export {
   tramColor,
   tramStops,
   undergroundLines,
+  undergroundColor,
   undergroundStations
 };

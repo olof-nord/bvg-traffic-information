@@ -1,3 +1,5 @@
+export const undergroundColor = '#115D91';
+
 export interface UndergroundLine {
   line: string;
   color: string;

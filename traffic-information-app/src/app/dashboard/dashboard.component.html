@@ -2,27 +2,39 @@
 
 <h2 class="mt-2 font-weight-lighter">Verkehrsmeldungen</h2>
 
-<nav ngbNav #nav="ngbNav" class="nav-tabs nav-fill">
+<nav ngbNav #nav="ngbNav" orientation="horizontal" class="nav-tabs nav-fill">
   <ng-container ngbNavItem>
-    <a ngbNavLink>U-Bahn</a>
+    <a ngbNavLink class="text-left">
+      <img src="assets/BVG_U-Bahn.svg" width="30" height="30" alt="BVG U-Bahn icon">
+      U-Bahn
+    </a>
     <ng-template ngbNavContent>
       <app-lines type="underground"></app-lines>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink>Tram</a>
+    <a ngbNavLink class="text-left">
+      <img src="assets/BVG_Tram.svg" width="30" height="30" alt="BVG tram icon">
+      Tram
+    </a>
     <ng-template ngbNavContent>
       <app-lines type="tram"></app-lines>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink>Bus</a>
+    <a ngbNavLink class="text-left">
+      <img src="assets/BVG_Bus.svg" width="30" height="30" alt="BVG bus icon">
+      Bus
+    </a>
     <ng-template ngbNavContent>
       <app-lines type="bus"></app-lines>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink>Fähre</a>
+    <a ngbNavLink class="text-left">
+      <img src="assets/BVG_Faehre.svg" width="30" height="30" alt="BVG ferry icon">
+      Fähre
+    </a>
     <ng-template ngbNavContent>
       <app-lines type="ferry"></app-lines>
     </ng-template>

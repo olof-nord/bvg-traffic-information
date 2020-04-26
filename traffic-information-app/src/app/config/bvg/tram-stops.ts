@@ -383,5 +383,35 @@ export const tramStops: TramStop[] = [
       'Georgenstr./Am Kupfergraben',
       'Am Kupfergraben'
     ]
+  },
+  {
+    line: '16',
+    stops: [
+      'Ahrensfelde/Stadtgrenze',
+      'Barnimplatz',
+      'Niemegker Str.',
+      'Wuhletalstr.',
+      'Max-Herrmann-Str.',
+      'Bürgerpark Marzahn',
+      'Freizeitforum Marzahn',
+      'Marzahner Promenade',
+      'S Marzahn',
+      'Gewerbepark Georg Knorr',
+      'Dingelstädter Str.',
+      'Landsberger Allee/Rhinstr.',
+      'Schalkauer Str.',
+      'Arendsweg',
+      'Genslerstr.',
+      'Zechliner Str.',
+      'Altenhofer Str.',
+      'Hohenschönhauser Str.',
+      'Landsberger Allee/Weißenseer W.',
+      'Roederplatz',
+      'Möllendorffstr./Storkower Str.',
+      'Loeperplatz',
+      'Rathaus Lichtenberg',
+      'S+U Frankfurter Allee',
+      'Scharnweberstr./Weichselstr.'
+    ]
   }
 ];
