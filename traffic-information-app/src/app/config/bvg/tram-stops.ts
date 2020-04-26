@@ -807,5 +807,45 @@ export const tramStops: TramStop[] = [
       'Zum Seeblick',
       'Alt-Schmöckwitz'
     ]
+  },
+  {
+    line: '87',
+    stops: [
+      'S Rahnsdorf',
+      'Woltersdorf, Goethestr.',
+      'Woltersdorf, Eichendamm',
+      'Woltersdorf, Lerchenstr.',
+      'Woltersdorf, Berliner Platz',
+      'Woltersdorf, Fasanenstr.',
+      'Woltersdorf, Thälmannplatz',
+      'Woltersdorf, Blumenstr.',
+      'Woltersdorf, Krankenhaus',
+      'Woltersdorf, Schleuse'
+    ]
+  },
+  {
+    line: '88',
+    stops: [
+      'S Friedrichshagen',
+      'Brösener Str.',
+      'Schöneiche, Waldstr.',
+      'Schöneiche, Goethepark',
+      'Schöneiche, Rahnsdorfer Str.',
+      'Schöneiche, Dorfstr.',
+      'Schöneiche, Dorfaue',
+      'Schöneiche, Schillerstr.',
+      'Schöneiche, Grätzwalde',
+      'Schöneiche, Jägerstr.',
+      'Schöneiche, Kalkberger Str.',
+      'Rüdersdorf, Berghof-Weiche',
+      'Rüdersdorf, Berghof',
+      'Rüdersdorf, Torellplatz',
+      'Rüdersdorf, Heinitzstr.',
+      'Rüdersdorf, Marktplatz',
+      'Rüdersdorf, Rathaus',
+      'Rüdersdorf, Breitscheidstr.',
+      'Rüdersdorf, Marienstr.',
+      'Alt-Rüdersdorf'
+    ]
   }
 ];
