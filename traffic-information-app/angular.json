@@ -130,6 +130,16 @@
               "protractorConfig": "e2e/protractor-ci.conf.js"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://olof-nord.github.io/bvg-traffic-information-app/",
+            "noSilent": true,
+            "message": "Deploying app to GitHub Pages",
+            "name": "Olof Nord",
+            "email": "olof.nord@tutanota.com"
+          }
         }
       }
     }
