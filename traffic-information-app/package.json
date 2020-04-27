@@ -1,6 +1,6 @@
 {
   "name": "traffic-information-app",
-  "description": "This project uses the BVG Verkehrsmeldungen API and visualises the information",
+  "description": "This project uses the BVG Verkehrsmeldungen API and visualises the status information",
   "version": "0.2.0",
   "license": "GPL-3.0",
   "repository": {
@@ -13,7 +13,8 @@
   "keywords": [
     "angular",
     "ngrx",
-    "bvg"
+    "bvg",
+    "traffic status information"
   ],
   "scripts": {
     "clean": "rimraf api/* src/environments dist/*",
