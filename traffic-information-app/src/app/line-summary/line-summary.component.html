@@ -1,24 +1,52 @@
-<div class="row border-bottom" *ngFor="let message of messages$ | async">
-  <div class="col-1 text-center text-white" [ngStyle]="{'background-color': getBackgroundColor()}">
-    <span class="align-middle font-weight-bold">{{ line }}</span>
-  </div>
-  <div class="col-11">
-    <a href="#" class="text-decoration-none text-dark" (click)="isCollapsed = !isCollapsed"
-       [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage">
-      {{ message?.textIntUrsache }}
-    </a>
+<div class="row" *ngFor="let message of messages$ | async">
+  <div class="col">
+    <div class="card">
+      <div class="card-header bg-transparent">
+        <a href="#!" role="button" class="text-decoration-none text-dark" (click)="isCollapsed = !isCollapsed"
+           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage">
 
-    <div id="collapseMessage" [ngbCollapse]="isCollapsed">
-      <app-message [message]="message"></app-message>
+          <div class="row">
+            <div class="col-1">
+              <div *ngIf="type === 'underground'">
+                <img [src]="'assets/BVG_' + line +'.svg'" width="50" height="50" alt="BVG U-Bahn icon">
+              </div>
+
+              <div *ngIf="type !== 'underground'" class="text-center text-white" [ngStyle]="{'background-color': getBackgroundColor()}">
+                <span class="align-middle font-weight-bold">{{ line }}</span>
+              </div>
+            </div>
+            <div class="col-11 align-self-center">
+              {{ message?.textIntUrsache }}
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="card-body py-0" id="collapseMessage" [ngbCollapse]="isCollapsed">
+        <app-message [message]="message"></app-message>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row border-bottom" *ngIf="noMessagesAvailable()">
-  <div class="col-1 text-center text-white" [ngStyle]="{'background-color': getBackgroundColor()}">
-    <span class="align-middle font-weight-bold">{{ line }}</span>
-  </div>
-  <div class="col-11">
-    <span class="align-middle"></span>
+<div class="row" *ngIf="noMessagesAvailable()">
+  <div class="col">
+    <div class="card">
+      <div class="card-header bg-transparent">
+        <div class="row">
+          <div class="col-1">
+            <div *ngIf="type === 'underground'">
+              <img [src]="'assets/BVG_' + line +'.svg'" width="50" height="50" alt="BVG U-Bahn icon">
+            </div>
+
+            <div *ngIf="type !== 'underground'" class="text-center text-white" [ngStyle]="{'background-color': getBackgroundColor()}">
+              <span class="align-middle font-weight-bold">{{ line }}</span>
+            </div>
+          </div>
+          <div class="col-11 align-self-center">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
