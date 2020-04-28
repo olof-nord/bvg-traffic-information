@@ -47,9 +47,16 @@ export const selectMessagesForLine = (line: string) => createSelector(
   state => state.messages.filter(message => message.linie === line)
 );
 
+export const selectMostRecentValidMessageForLineAndDate = (line: string, date: string) => createSelector(
+  selectValidMessagesForLineAndDate(line, date),
+  messages => messages.sort((message1, message2) =>
+    orderByFromDate(message1, message2))[0]
+);
+
 export const selectValidMessagesForLineAndDate = (line: string, date: string) => createSelector(
-  selectMessagesForLine(line),
-  messages => messages.filter(message => isMessageBetweenFilter(date, message))
+  selectUnorderedValidMessagesForLineAndDate(line, date),
+  messages => messages.sort((message1, message2) =>
+    orderByFromDate(message1, message2))
 );
 
 export const selectAllValidMessagesForDate = (date: string) => createSelector(
@@ -82,6 +89,21 @@ export const selectValidFerryMessagesForDate = (date: string) => createSelector(
 const isMessageBetweenFilter = (date: string, message: Message) => {
   const includeBothStartAndEnd = '[]';
   return moment(date).isBetween(message.gueltigVonDatum, message?.gueltigBisDatum, 'day', includeBothStartAndEnd);
+};
+
+const selectUnorderedValidMessagesForLineAndDate = (line: string, date: string) => createSelector(
+  selectMessagesForLine(line),
+  messages => messages.filter(message => isMessageBetweenFilter(date, message))
+);
+
+const orderByFromDate = (message1: Message, message2: Message): number => {
+  if (moment(message1.gueltigVonDatum).isBefore(message2.gueltigVonDatum)) {
+    return 1;
+  } else if (moment(message1.gueltigVonDatum).isAfter(message2.gueltigVonDatum)) {
+    return -1;
+  } else {
+    return 0;
+  }
 };
 
 export const selectMessagesError = createSelector(

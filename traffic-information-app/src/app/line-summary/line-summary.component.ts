@@ -8,7 +8,8 @@ import { UndergroundLine } from '@config/bvg/underground-lines';
 
 import {
   selectMessagesLoading,
-  selectValidMessagesForLineAndDate
+  selectValidMessagesForLineAndDate,
+  selectMostRecentValidMessageForLineAndDate
 } from '@store/selectors/message.selectors';
 import { undergroundLines, busColor, tramColor, ferryColor } from '@config/bvg';
 import * as moment from 'moment';
@@ -26,6 +27,7 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   @Input()
   type: 'bus'|'ferry'|'tram'|'underground';
 
+  mostRecentMessage$: Observable<Message>;
   messages$: Observable<Array<Message>>;
   messagesLoading$: Observable<boolean>;
 
@@ -38,6 +40,7 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const today = moment().toISOString();
     this.messages$ = this.store$.pipe(select(selectValidMessagesForLineAndDate(this.line, today)));
+    this.mostRecentMessage$ = this.store$.pipe(select(selectMostRecentValidMessageForLineAndDate(this.line, today)));
     this.messagesLoading$ = this.store$.pipe(select(selectMessagesLoading));
   }
 

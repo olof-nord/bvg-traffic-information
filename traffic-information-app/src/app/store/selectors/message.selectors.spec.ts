@@ -13,7 +13,8 @@ import {
   selectValidBusMessagesForDate,
   selectValidTramMessagesForDate,
   selectValidUndergroundMessagesForDate,
-  selectValidMessagesForLineAndDate
+  selectValidMessagesForLineAndDate,
+  selectMostRecentValidMessageForLineAndDate
 } from '@store/selectors/message.selectors';
 import { Message } from '@api/models';
 
@@ -28,6 +29,16 @@ describe('Message Selectors', () => {
     linie: '255',
     gueltigVonDatum: '2020-01-13',
     prioritaet: 3,
+    grundFahrplanabweichung: 4
+  };
+  const busMessage2: Message = {
+    meldungsId: 'BVG215279',
+    datum: '2018-10-18T04:39:48',
+    type: 0,
+    verkehrsmittel: 1,
+    linie: '255',
+    gueltigVonDatum: '2018-10-18',
+    prioritaet: 2,
     grundFahrplanabweichung: 4
   };
   const ubahnMessage: Message = {
@@ -264,6 +275,28 @@ describe('Message Selectors', () => {
     expect(mockStore.select(selectMessagesForLine('U1'))
       .subscribe(result => {
         return expect(result).toEqual([ ubahnMessage ]);
+      })
+    );
+
+  });
+
+  it('should correctly select the most recent traffic status messages for a specific line', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, busMessage2 ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectMostRecentValidMessageForLineAndDate('255', '2019-01-01'))
+      .subscribe(result => {
+        return expect(result).toEqual(busMessage2);
+      })
+    );
+
+    expect(mockStore.select(selectMostRecentValidMessageForLineAndDate('255', '2020-02-01'))
+      .subscribe(result => {
+        return expect(result).toEqual(busMessage);
       })
     );
 

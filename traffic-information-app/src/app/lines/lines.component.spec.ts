@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
 
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { metaReducers, reducers } from '@app/store/reducers';
 
@@ -21,6 +21,7 @@ describe('LinesComponent', () => {
         FormsModule,
         FontAwesomeModule,
         NgbDatepickerModule,
+        NgbCollapseModule,
         StoreModule.forRoot(reducers, { metaReducers })
       ],
       declarations: [

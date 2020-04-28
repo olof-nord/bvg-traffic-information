@@ -36,9 +36,6 @@ describe('MessageComponent', () => {
     expect(fixture.nativeElement.querySelectorAll('.bvg-impact').length)
       .toEqual(1);
 
-    expect(fixture.nativeElement.querySelectorAll('.bvg-reported-at').length)
-      .toEqual(1);
-
     expect(fixture.nativeElement.querySelectorAll('.bvg-valid-from').length)
       .toEqual(1);
   });
