@@ -20,6 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { reducers, metaReducers } from '@store/reducers/index';
 import { MessageEffects } from '@store/effects/message.effects';
+import { DateEffects } from '@store/effects/date.effects';
 
 import { environment } from '@environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,8 +32,11 @@ import { MessageComponent } from '@message/message.component';
 import { LinesComponent } from '@lines/lines.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
 import { DateSelectorComponent } from '@date-selector/date-selector.component';
+import { MockModule } from '@config/mock/mock.module';
 
 registerLocaleData(localeDe, 'de-DE', localeDeExtra);
+
+const mockModules = environment.production ? [] : [MockModule];
 
 export const API_INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -66,9 +70,10 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
       }
     }),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    EffectsModule.forRoot([MessageEffects]),
+    EffectsModule.forRoot([MessageEffects, DateEffects]),
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ...mockModules
   ],
   providers: [
     ApiKeyInterceptor,

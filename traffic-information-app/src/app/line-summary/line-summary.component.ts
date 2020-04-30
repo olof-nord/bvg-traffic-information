@@ -11,8 +11,8 @@ import {
   selectValidMessagesForLineAndDate,
   selectMostRecentValidMessageForLineAndDate
 } from '@store/selectors/message.selectors';
+import { selectDate } from '@store/selectors/date.selectors';
 import { undergroundLines, busColor, tramColor, ferryColor } from '@config/bvg';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-line-summary',
@@ -30,6 +30,7 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   mostRecentMessage$: Observable<Message>;
   messages$: Observable<Array<Message>>;
   messagesLoading$: Observable<boolean>;
+  selectedDate$: Observable<string>;
 
   isCollapsed = true;
 
@@ -38,10 +39,13 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   constructor(private store$: Store<State>) { }
 
   ngOnInit(): void {
-    const today = moment().toISOString();
-    this.messages$ = this.store$.pipe(select(selectValidMessagesForLineAndDate(this.line, today)));
-    this.mostRecentMessage$ = this.store$.pipe(select(selectMostRecentValidMessageForLineAndDate(this.line, today)));
+    this.selectedDate$ = this.store$.pipe(select(selectDate));
     this.messagesLoading$ = this.store$.pipe(select(selectMessagesLoading));
+
+    this.subscriptions.add(this.selectedDate$.subscribe((date: string) => {
+      this.messages$ = this.store$.pipe(select(selectValidMessagesForLineAndDate(this.line, date)));
+      this.mostRecentMessage$ = this.store$.pipe(select(selectMostRecentValidMessageForLineAndDate(this.line, date)));
+    }));
   }
 
   getBackgroundColor(): string {

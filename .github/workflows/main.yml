@@ -37,5 +37,6 @@ jobs:
       - name: Run tests
         run: npm --prefix ./traffic-information-app test -- --configuration=ci
 
-      - name: Run E2E tests
-        run: npm --prefix ./traffic-information-app run e2e -- --configuration=ci
+#        The BVG 'dev' instance is not available enough to support this
+#      - name: Run E2E tests
+#        run: npm --prefix ./traffic-information-app run e2e -- --configuration=ci

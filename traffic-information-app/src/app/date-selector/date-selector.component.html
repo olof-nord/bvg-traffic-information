@@ -3,8 +3,8 @@
     <form class="form-inline">
       <div class="form-group">
         <div class="input-group">
-          <input class="form-control" name="dp"
-                 [(ngModel)]="selectedDate" ngbDatepicker #d="ngbDatepicker" aria-label="datepicker">
+          <input class="form-control bvg-select-date" name="dp" (dateSelect)="onDateSelect($event)"
+                 [(ngModel)]="currentDate" ngbDatepicker #d="ngbDatepicker" aria-label="datepicker">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
               <fa-icon [icon]="faCalendarAlt"></fa-icon>

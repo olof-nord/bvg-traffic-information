@@ -48,7 +48,7 @@ export const selectMessagesForLine = (line: string) => createSelector(
 );
 
 export const selectMostRecentValidMessageForLineAndDate = (line: string, date: string) => createSelector(
-  selectValidMessagesForLineAndDate(line, date),
+  selectUnorderedValidMessagesForLineAndDate(line, date),
   messages => messages.sort((message1, message2) =>
     orderByFromDate(message1, message2))[0]
 );

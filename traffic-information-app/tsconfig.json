@@ -16,6 +16,7 @@
       "@config/*": ["app/config/*"],
       "@config/bvg/*": ["app/config/bvg/*"],
       "@config/interceptor*": ["app/config/interceptor/*"],
+      "@config/mock/*": ["app/config/mock/*"],
 
       "@dashboard/*": ["app/dashboard/*"],
       "@header/*": ["app/header/*"],
