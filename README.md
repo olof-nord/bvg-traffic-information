@@ -7,11 +7,16 @@ A traffic information app to present bus, tram, subway and ferry public transpor
 The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen) section of the BVG page.
 
 **Desktop**  
+<kbd>
 ![Desktop Preview](https://github.com/olof-nord/bvg-traffic-information-app/raw/master/assets/Screenshot_desktop.png)
+</kbd>
 
 **Mobile**  
+
 <p align="center">
-  <img src="https://github.com/olof-nord/bvg-traffic-information-app/raw/master/assets/Screenshot_mobile.png" alt="Screenshot of mobile view"/>
+  <kbd>
+    <img src="https://github.com/olof-nord/bvg-traffic-information-app/raw/master/assets/Screenshot_mobile.png" alt="Screenshot of mobile view"/>
+  </kbd>
 </p>
 
 ## Features
