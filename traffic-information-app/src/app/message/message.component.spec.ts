@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { MessageComponent } from './message.component';
 import { Message } from '@api/models';
 
@@ -14,13 +16,18 @@ describe('MessageComponent', () => {
     verkehrsmittel: 1,
     linie: 'U1',
     gueltigVonDatum: '2020-04-14',
+    gueltigVonZeit: '00:00:00',
     gueltigBisDatum: '2020-06-15',
+    gueltigBisZeit: '00:00:00',
     prioritaet: 1,
     grundFahrplanabweichung: 2
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FontAwesomeModule
+      ],
       declarations: [
         MessageComponent
       ]
