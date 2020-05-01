@@ -4,36 +4,36 @@
 
 <nav ngbNav #nav="ngbNav" orientation="horizontal" class="nav-tabs nav-fill">
   <ng-container ngbNavItem>
-    <a ngbNavLink class="text-left text-dark">
+    <a ngbNavLink class="text-center text-md-left text-dark">
       <img src="assets/BVG_U-Bahn.svg" width="40" height="40" alt="BVG U-Bahn icon">
-      U-Bahn
+      <p class="pl-1 d-none d-md-inline-block">U-Bahn</p>
     </a>
     <ng-template ngbNavContent>
       <app-lines type="underground"></app-lines>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink class="text-left text-dark">
+    <a ngbNavLink class="text-center text-md-left text-dark">
       <img src="assets/BVG_Tram.svg" width="40" height="40" alt="BVG tram icon">
-      Tram
+      <p class="pl-1 d-none d-md-inline-block">Tram</p>
     </a>
     <ng-template ngbNavContent>
       <app-lines type="tram"></app-lines>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink class="text-left text-dark">
+    <a ngbNavLink class="text-center text-md-left text-dark">
       <img src="assets/BVG_Bus.svg" width="40" height="40" alt="BVG bus icon">
-      Bus
+      <p class="pl-1 d-none d-md-inline-block">Bus</p>
     </a>
     <ng-template ngbNavContent>
       <app-lines type="bus"></app-lines>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink class="text-left text-dark">
+    <a ngbNavLink class="text-center text-md-left text-dark">
       <img src="assets/BVG_Faehre.svg" width="40" height="40" alt="BVG ferry icon">
-      Fähre
+      <p class="pl-1 d-none d-md-inline-block">Fähre</p>
     </a>
     <ng-template ngbNavContent>
       <app-lines type="ferry"></app-lines>
