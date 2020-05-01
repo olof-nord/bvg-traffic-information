@@ -2,6 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+
 import { State } from '@app/store/reducers';
 import { Message } from '@api/models';
 import { UndergroundLine } from '@config/bvg/underground-lines';
@@ -33,6 +35,8 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
   selectedDate$: Observable<string>;
 
   isCollapsed = true;
+  faPlus = faPlus;
+  faMinus = faMinus;
 
   private subscriptions: Subscription = new Subscription();
 

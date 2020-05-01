@@ -4,7 +4,6 @@ import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 import { State } from '@app/store/reducers';
 import * as dateActions from '@store/actions/date.actions';
@@ -18,9 +17,10 @@ import { selectDate } from '@store/selectors/date.selectors';
 })
 export class DateSelectorComponent implements OnInit, OnDestroy {
 
-  currentDate: NgbDateStruct;
-  faCalendarAlt: IconDefinition;
   selectedDate$: Observable<string>;
+
+  currentDate: NgbDateStruct;
+  faCalendarAlt = faCalendarAlt;
 
   private subscriptions: Subscription = new Subscription();
 
@@ -28,7 +28,6 @@ export class DateSelectorComponent implements OnInit, OnDestroy {
               private store$: Store<State>) {}
 
   ngOnInit(): void {
-    this.faCalendarAlt = faCalendarAlt;
     this.selectedDate$ = this.store$.pipe(select(selectDate));
 
     this.subscriptions.add(this.selectedDate$.subscribe((date: string) => {

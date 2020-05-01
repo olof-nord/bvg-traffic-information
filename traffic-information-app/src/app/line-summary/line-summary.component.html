@@ -2,9 +2,8 @@
   <div class="col">
     <div class="card">
       <div class="card-header bg-transparent">
-        <a href="#!" role="button" class="text-decoration-none text-dark" (click)="isCollapsed = !isCollapsed"
-           [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage">
-
+        <a href="#!" role="button" class="text-decoration-none text-dark nav-link p-0" (click)="isCollapsed = !isCollapsed"
+           [ngClass]="{'disabled' : messagesLoading$|async}" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage">
           <div class="row">
             <div class="col-3 col-sm-2 col-lg-1">
               <div *ngIf="type === 'underground'">
@@ -17,7 +16,14 @@
             </div>
             <div class="col-9 col-sm-10 col-lg-11 align-self-center">
               <div *ngIf="mostRecentMessage$ | async as mostRecentMessage">
-                {{ mostRecentMessage?.textIntUrsache }}
+                <div class="row">
+                  <div class="col-10">
+                    {{ mostRecentMessage?.textIntUrsache }}
+                  </div>
+                  <div class="col-2 align-self-center text-right">
+                    <fa-icon [icon]="isCollapsed ? faPlus : faMinus"></fa-icon>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
