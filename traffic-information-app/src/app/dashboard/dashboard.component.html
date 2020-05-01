@@ -40,17 +40,15 @@
     </ng-template>
   </ng-container>
 </nav>
-<div [ngbNavOutlet]="nav" class="mt-2 container-fluid px-0"></div>
 
 <div *ngIf="messagesLoading$ | async">
-  <h2 class="text-center mt-5">
-    Verkehrsmeldungen werden geladen
-  </h2>
-  <p>
+  <p class="mt-4">
     <ngb-progressbar type="warning" [value]="100" [striped]="true" [animated]="true">
     </ngb-progressbar>
   </p>
 </div>
+
+<div [ngbNavOutlet]="nav" class="mt-2 container-fluid px-0"></div>
 
 <div *ngIf="messagesError$ | async as error">
   <p>
