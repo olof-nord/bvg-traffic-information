@@ -10,9 +10,9 @@ The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/F
 ![Desktop Preview](https://github.com/olof-nord/bvg-traffic-information-app/raw/master/assets/Screenshot_desktop.png)
 
 **Mobile**  
-<div style="text-align:center">
+<p align="center">
   <img src="https://github.com/olof-nord/bvg-traffic-information-app/raw/master/assets/Screenshot_mobile.png" alt="Screenshot of mobile view"/>
-</div>
+</p>
 
 ## Features
 - Modern, mobile-friendly design
