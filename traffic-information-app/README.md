@@ -17,7 +17,6 @@ To manage several versions of node, [nvm](https://github.com/nvm-sh/nvm) comes i
 - The token could also be set by setting the environment variable `export BVG_API_KEY=xyz` before starting.
 
 ### Install dependencies 
-Before starting, make sure to install the dependencies
 ```sh
 npm install
 ```
@@ -28,6 +27,16 @@ npm run start
 ```
 
 Once completed, a browser tab will open which points to `http://localhost:4200`. The app will automatically reload if you change any of the source files.
+
+#### A note about mocking in 'dev' mode
+In dev mode (the mode used when starting locally per default), if no successful response from the BVG backend is found, a local mock is used
+which provides some example data.  
+For more info, see the [MockModule](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/traffic-information-app/src/app/config/mock/mock.module.ts). 
+
+To run in production mode:  
+```sh
+npm run build && npm run start
+```
 
 ### Build
 ```sh
@@ -41,17 +50,17 @@ The build artifacts will be stored in the `dist/` directory.
 npm run lint
 ```
 
-The unit tests are run with [TSLint](https://github.com/palantir/tslint).  
+The lining is run with [TSLint](https://github.com/palantir/tslint).  
 The linter configuration file is [tslint.json](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/traffic-information-app/tslint.json).
 
-### Running unit tests
+### Run unit tests
 ```sh
 npm run test
 ``` 
 The unit tests are run with [Karma](https://karma-runner.github.io).
 The Karma configuration file is [karma.conf.js](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/traffic-information-app/karma.conf.js).
 
-### Running end-to-end tests
+### Run end-to-end tests
 ```sh
 npm run e2e
 ```

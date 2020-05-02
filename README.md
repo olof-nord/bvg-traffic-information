@@ -57,24 +57,17 @@ with some various minor modifications.
 ## Setup
 ### Install dependencies 
 ```sh
-npm install
+npm --prefix ./traffic-information-app install
 ```
 
 ### Run
-Running the app in dev mode including hot module reloading:  
+Running the app:  
 ```sh
-npm run start
+npm run --prefix ./traffic-information-app start
 ```
 
-#### A note about mocking in 'dev' mode
-In dev mode, if no successful response from the BVG backend is found, a local mock is used
-which provides some example data.  
-For more info, see the [MockModule](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/traffic-information-app/src/app/config/mock/mock.module.ts). 
-
-To run in production mode:  
-```sh
-npm run build && npm run start
-```
+## More details
+For more in-depth details, see the [developer readme](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/traffic-information-app/README.md).
 
 ## License
 >You can check out the full license [here](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/LICENSE)
