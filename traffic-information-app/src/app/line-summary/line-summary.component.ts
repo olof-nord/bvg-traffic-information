@@ -89,6 +89,22 @@ export class LineSummaryComponent implements OnInit, OnDestroy {
     return !fetchingMessages && fetchedMessages.length === 0;
   }
 
+  translateTransportType(type: string): string {
+    let translation: string;
+
+    if (type === 'bus') {
+      translation = 'Bus';
+    } else if (type === 'ferry') {
+      translation = 'Fähre';
+    } else if (type === 'tram') {
+      translation = 'Tram';
+    } else if (type === 'underground') {
+      translation = 'U-Bahn';
+    }
+
+    return translation;
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }

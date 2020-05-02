@@ -3,11 +3,11 @@
     {{ message?.textIntAuswirkung }}
   </p>
   <div class="row mb-0">
-    <div class="col bvg-valid-from">
-      <fa-icon [icon]="faSignInAlt"></fa-icon> {{ message?.gueltigVonDatum | date:'shortDate':'de':'de-DE'}} {{ message?.gueltigVonZeit.substring(0, 5) }}
+    <div class="col bvg-valid-from" title="Verkehrsmeldung gültig von">
+      <fa-icon [icon]="faSignInAlt" role="presentation" aria-hidden="true"></fa-icon> {{ message?.gueltigVonDatum | date:'shortDate':'de':'de-DE'}} {{ message?.gueltigVonZeit.substring(0, 5) }}
     </div>
-    <div class="col text-right bvg-valid-to" *ngIf="message?.gueltigBisDatum">
-      <fa-icon [icon]="faSignOutAlt"></fa-icon> {{ message?.gueltigBisDatum | date:'shortDate':'de':'de-DE'}} {{ message?.gueltigBisZeit.substring(0, 5) }}
+    <div *ngIf="message?.gueltigBisDatum" class="col text-right bvg-valid-to" title="Verkehrsmeldung gültig bis">
+      <fa-icon [icon]="faSignOutAlt" role="presentation" aria-hidden="true"></fa-icon> {{ message?.gueltigBisDatum | date:'shortDate':'de':'de-DE'}} {{ message?.gueltigBisZeit.substring(0, 5) }}
     </div>
   </div>
 </div>

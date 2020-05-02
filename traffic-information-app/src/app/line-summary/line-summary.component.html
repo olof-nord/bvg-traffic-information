@@ -3,15 +3,18 @@
     <div class="card">
       <div class="card-header bg-transparent">
         <a href="#!" role="button" class="text-decoration-none text-dark nav-link p-0" (click)="isCollapsed = !isCollapsed"
-           [ngClass]="{'disabled' : messagesLoading$|async}" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage">
+           [ngClass]="{'disabled' : messagesLoading$|async}" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseMessage"
+           [title]="isCollapsed ?
+            'Detaillierten Verkehrsmeldungen für ' + translateTransportType(type) + ' Linie ' + line + ' anzeigen' :
+            'Detaillierten Verkehrsmeldungen für ' + translateTransportType(type) + ' Linie ' + line + ' verbergen'">
           <div class="row">
             <div class="col-3 col-sm-2 col-lg-1">
               <div *ngIf="type === 'underground'">
-                <img class="img-fluid" [src]="'assets/BVG_' + line +'.svg'" alt="BVG U-Bahn icon">
+                <img class="img-fluid" [src]="'assets/BVG_' + line +'.svg'" [alt]="'BVG U-Bahn Icon für Linie ' + line">
               </div>
 
               <div *ngIf="type !== 'underground'" class="text-center text-white" [ngStyle]="{'background-color': getBackgroundColor()}">
-                <span class="align-middle font-weight-bold">{{ line }}</span>
+                <span class="align-middle font-weight-bold" [title]="'BVG ' + translateTransportType(type) + ' Icon für Linie ' + line">{{ line }}</span>
               </div>
             </div>
             <div class="col-9 col-sm-10 col-lg-11 align-self-center">
@@ -21,7 +24,7 @@
                     {{ mostRecentMessage?.textIntUrsache }}
                   </div>
                   <div class="col-2 align-self-center text-right">
-                    <fa-icon [icon]="isCollapsed ? faPlus : faMinus"></fa-icon>
+                    <fa-icon [icon]="isCollapsed ? faPlus : faMinus" role="navigation"></fa-icon>
                   </div>
                 </div>
               </div>
@@ -44,15 +47,15 @@
 <div class="row" *ngIf="noMessagesAvailable()">
   <div class="col">
     <div class="card">
-      <div class="card-header bg-transparent">
+      <div class="card-header bg-transparent" [title]="'Keine Verkehrsmeldungen für Linie ' + line +' vorhanden'">
         <div class="row">
           <div class="col-3 col-sm-2 col-lg-1">
             <div *ngIf="type === 'underground'">
-              <img class="img-fluid" [src]="'assets/BVG_' + line +'.svg'" alt="BVG U-Bahn icon">
+              <img class="img-fluid" [src]="'assets/BVG_' + line +'.svg'" [alt]="'BVG U-Bahn Icon für Linie ' + line">
             </div>
 
             <div *ngIf="type !== 'underground'" class="text-center text-white" [ngStyle]="{'background-color': getBackgroundColor()}">
-              <span class="align-middle font-weight-bold">{{ line }}</span>
+              <span class="align-middle font-weight-bold" [title]="'BVG ' + translateTransportType(type) + ' Icon für Linie ' + line">{{ line }}</span>
             </div>
           </div>
           <div class="col-9 col-sm-10 col-lg-11">

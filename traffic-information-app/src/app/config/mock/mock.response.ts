@@ -616,5 +616,34 @@ export const mockResponseBody = [
     "umfahrung": "",
     "textWAPSMSUrsache": "Sperrung wegen Bauarbeiten",
     "textWAPSMSAuswirkung": " Potsdamer Brücke ist (in Richtung Roseneck) um 80 Meter verlegt worden."
+  },
+  {
+    "meldungsId": "BVG259626",
+    "relatedMessageIds": [],
+    "datum": "2020-04-27T14:43:46",
+    "type": 0,
+    "verkehrsmittel": 4,
+    "linie": "F24",
+    "richtungName": "beide",
+    "richtungHafasId": 0,
+    "beginnAbschnittName": "Spreewiesen",
+    "beginnAbschnittHafasId": 900184509,
+    "endeAbschnittName": "Kruggasse",
+    "endeAbschnittHafasId": 900183516,
+    "geokoordinaten": {
+      "latitude": 13.69,
+      "longitude": 52.432
+    },
+    "gueltigVonDatum": "2020-04-30",
+    "gueltigVonZeit": "22:00:00",
+    "prioritaet": 2,
+    "grundFahrplanabweichung": 4,
+    "textIntUrsache": "betriebliche Gründe",
+    "sev": "",
+    "textIntAuswirkung": "Beförderungseinschränkung: Beschränkung der Beförderungkapazität auf der Ruderfähre F24 anlässlich der SARS-CoV-2-Eindämmungsmaßnahmenverordnung auf maximal 4 Personen oder 2 Personen und 2 Fahrräder.\n ",
+    "barrierefrei": "",
+    "umfahrung": "",
+    "textWAPSMSUrsache": "betriebliche Gründe",
+    "textWAPSMSAuswirkung": "Beschränkung der Beförderungkapazität (Fähre F24) auf max. 4 Personen"
   }
 ];
