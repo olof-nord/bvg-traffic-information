@@ -28,11 +28,9 @@ The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/F
 Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main public transport company of Berlin, Germany.
 
 ### Verkehrsmeldungen API
-- This project makes use of the BVG Verkehrsmeldungen API - using the 'dev' instance.
-- The endpoint used is specified in [the API specification](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/api/spec.yaml).
+- This project makes use of the BVG Verkehrsmeldungen API.
 - Note that a BVG API token is required for authentication. 
-- This could be put in a `.env` file in the root folder with a key `BVG_API_KEY=xyz` specified.
-- The token could also be set by setting the environment variable `export BVG_API_KEY=xyz` before starting.
+- For more details, see the [developer readme](https://github.com/olof-nord/bvg-traffic-information-app/blob/master/traffic-information-app/README.md).
 
 ## Technologies used
 ### Frameworks
@@ -76,17 +74,6 @@ For more info, see the [MockModule](https://github.com/olof-nord/bvg-traffic-inf
 To run in production mode:  
 ```sh
 npm run build && npm run start
-```
-
-## Test
-To execute all unit tests:  
-```sh
-npm run test
-```
-
-To execute all end-to-end tests:  
-```sh
-npm run e2e
 ```
 
 ## License
