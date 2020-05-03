@@ -1,10 +1,11 @@
 # BVG traffic information app
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Folof-nord%2Fbvg-traffic-information%2Fbadge&label=build&logo=none)](https://actions-badge.atrox.dev/olof-nord/bvg-traffic-information/goto?ref=master)
 [![Current Version](https://img.shields.io/badge/version-0.4.0-green.svg)](https://github.com/olof-nord/bvg-traffic-information)
+[![GPL-licensed](https://img.shields.io/github/license/olof-nord/bvg-traffic-information.svg)](https://github.com/olof-nord/bvg-traffic-information)
 
-A traffic information app to present bus, tram, subway and ferry public transport status information in Berlin.
+**A traffic information website to present bus, tram, subway and ferry public transport status information in Berlin.**
 
-The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen) section of the BVG page.
+The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen) section of the BVG website.
 
 **Desktop**  
 <kbd>
@@ -20,9 +21,15 @@ The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/F
 </p>
 
 ## Features
-- Modern, mobile-friendly design
-- Contextual information
-- Information levels rather than everything-at-once
+- Single purpose page
+- Status information for each line summarised 
+- Overview page with less information
+- Smaller header
+- Tabs for each traffic type
+- Mobile friendly design
+- Information levels with information about each line expandable
+- Further visual entities introduced for information (instead of text)
+- Date for the status messages can be freely chosen with a datepicker
 
 ## BVG
 Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main public transport company of Berlin, Germany.
@@ -68,6 +75,9 @@ npm run --prefix ./traffic-information-app start
 
 ## More details
 For more in-depth details, see the [developer readme](https://github.com/olof-nord/bvg-traffic-information/blob/master/traffic-information-app/README.md).
+
+## Contributing
+If you have a question, found a bug or want to propose a feature, start with [an issue](https://github.com/olof-nord/bvg-traffic-information/issues).
 
 ## License
 >You can check out the full license [here](https://github.com/olof-nord/bvg-traffic-information/blob/master/LICENSE)
