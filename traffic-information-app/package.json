@@ -5,16 +5,17 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:olof-nord/bvg-traffic-information-app.git"
+    "url": "git@github.com:olof-nord/bvg-traffic-information.git"
   },
   "author": {
     "name": "Olof Nord"
   },
   "keywords": [
-    "angular",
-    "ngrx",
+    "public-transport",
+    "transit",
     "bvg",
-    "traffic status information"
+    "berlin",
+    "germany"
   ],
   "scripts": {
     "clean": "rimraf api/* src/environments dist/*",

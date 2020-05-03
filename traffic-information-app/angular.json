@@ -134,7 +134,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://olof-nord.github.io/bvg-traffic-information-app/",
+            "baseHref": "https://olof-nord.github.io/bvg-traffic-information/",
             "noSilent": true,
             "message": "Deploying app to GitHub Pages",
             "name": "Olof Nord",
