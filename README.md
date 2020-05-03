@@ -1,6 +1,6 @@
 # BVG traffic information app
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Folof-nord%2Fbvg-traffic-information%2Fbadge&label=build&logo=none)](https://actions-badge.atrox.dev/olof-nord/bvg-traffic-information/goto?ref=master)
-[![Current Version](https://img.shields.io/badge/version-0.3.0-green.svg)](https://github.com/olof-nord/bvg-traffic-information)
+[![Current Version](https://img.shields.io/badge/version-0.4.0-green.svg)](https://github.com/olof-nord/bvg-traffic-information)
 
 A traffic information app to present bus, tram, subway and ferry public transport status information in Berlin.
 
@@ -8,14 +8,14 @@ The project is a redesign of the [BVG Verkehrsmeldungen](https://www.bvg.de/de/F
 
 **Desktop**  
 <kbd>
-![Desktop Preview](https://github.com/olof-nord/bvg-traffic-information/raw/master/assets/Screenshot_desktop.png)
+![Desktop Preview](https://github.com/olof-nord/bvg-traffic-information/raw/master/assets/latest/Screenshot_desktop.png)
 </kbd>
 
 **Mobile**  
 
 <p align="center">
   <kbd>
-    <img src="https://github.com/olof-nord/bvg-traffic-information/raw/master/assets/Screenshot_mobile.png" alt="Screenshot of mobile view"/>
+    <img src="https://github.com/olof-nord/bvg-traffic-information/raw/master/assets/latest/Screenshot_mobile.png" alt="Screenshot of mobile view"/>
   </kbd>
 </p>
 
