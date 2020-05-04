@@ -9,7 +9,7 @@ import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
 
 import { ApiModule } from '@api/api.module';
-import { ApiKeyInterceptor } from '@config/interceptor/api-key.interceptor';
+import { ApiKeyInterceptor } from '@config/api-key-interceptor/api-key.interceptor';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
