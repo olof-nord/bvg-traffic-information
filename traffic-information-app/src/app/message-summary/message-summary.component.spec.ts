@@ -2,12 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { MessageComponent } from './message.component';
+import { MessageSummaryComponent } from './message-summary.component';
 import { Message } from '@api/models';
 
 describe('MessageComponent', () => {
-  let component: MessageComponent;
-  let fixture: ComponentFixture<MessageComponent>;
+  let component: MessageSummaryComponent;
+  let fixture: ComponentFixture<MessageSummaryComponent>;
 
   const ubahnMessage: Message = {
     meldungsId: 'BVG258847',
@@ -29,11 +29,11 @@ describe('MessageComponent', () => {
         FontAwesomeModule
       ],
       declarations: [
-        MessageComponent
+        MessageSummaryComponent
       ]
     });
 
-    fixture = TestBed.createComponent(MessageComponent);
+    fixture = TestBed.createComponent(MessageSummaryComponent);
     component = fixture.componentInstance;
     component.message = ubahnMessage;
     fixture.detectChanges();

@@ -21,7 +21,7 @@
       "@dashboard/*": ["app/dashboard/*"],
       "@header/*": ["app/header/*"],
       "@breadcrumb/*": ["app/breadcrumb/*"],
-      "@message/*": ["app/message/*"],
+      "@message-summary/*": ["app/message-summary/*"],
       "@lines/*": ["app/lines/*"],
       "@line-summary/*": ["app/line-summary/*"],
       "@date-selector/*": ["app/date-selector/*"]

@@ -36,7 +36,7 @@
       <div class="card-body pb-0" id="collapseMessage" [ngbCollapse]="isCollapsed">
         <div class="row" *ngFor="let message of messages$ | async; last as isLast">
           <div class="col mb-4" [ngClass]="{ 'border-bottom':!isLast, 'pb-4': !isLast }">
-            <app-message [message]="message"></app-message>
+            <app-message-summary [message]="message"></app-message-summary>
           </div>
         </div>
       </div>

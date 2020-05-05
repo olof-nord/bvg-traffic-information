@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from '@dashboard/dashboard.component';
 import { HeaderComponent } from '@header/header.component';
 import { BreadcrumbComponent } from '@breadcrumb/breadcrumb.component';
-import { MessageComponent } from '@message/message.component';
+import { MessageSummaryComponent } from '@message-summary/message-summary.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
 import { DateSelectorComponent } from '@date-selector/date-selector.component';
 
@@ -37,7 +37,7 @@ describe('AppComponent', () => {
         DashboardComponent,
         HeaderComponent,
         BreadcrumbComponent,
-        MessageComponent,
+        MessageSummaryComponent,
         LineSummaryComponent,
         DateSelectorComponent
       ]
