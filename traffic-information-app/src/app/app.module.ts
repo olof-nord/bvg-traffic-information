@@ -12,6 +12,7 @@ import { ApiModule } from '@api/api.module';
 import { ApiKeyInterceptor } from '@config/api-key-interceptor/api-key.interceptor';
 
 import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -33,6 +34,7 @@ import { LinesComponent } from '@lines/lines.component';
 import { LineSummaryComponent } from '@line-summary/line-summary.component';
 import { DateSelectorComponent } from '@date-selector/date-selector.component';
 import { MockModule } from '@config/mock/mock.module';
+import { MessageDetailComponent } from '@message-detail/message-detail.component';
 
 registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
@@ -53,7 +55,8 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     MessageSummaryComponent,
     LinesComponent,
     LineSummaryComponent,
-    DateSelectorComponent
+    DateSelectorComponent,
+    MessageDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ export const API_INTERCEPTOR_PROVIDER: Provider = {
     }),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([MessageEffects, DateEffects]),
+    StoreRouterConnectingModule.forRoot(),
     FormsModule,
     FontAwesomeModule,
     ...mockModules

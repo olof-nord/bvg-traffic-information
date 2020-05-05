@@ -2,6 +2,8 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as moment from 'moment';
 
 import * as fromMessages from '@store/reducers/message.reducer';
+import * as fromRouter from '@ngrx/router-store';
+
 import { Message } from '@api/models';
 
 import { undergroundLines } from '@config/bvg/underground-lines';
@@ -9,42 +11,59 @@ import { tramLines } from '@config/bvg/tram-lines';
 import { busLines } from '@config/bvg/bus-lines';
 import { ferryLines } from '@config/bvg/ferry-lines';
 
+export const selectRouterState = createFeatureSelector<fromRouter.RouterReducerState>('router');
 export const selectMessagesState = createFeatureSelector<fromMessages.State>('messages');
+
+// See https://ngrx.io/guide/router-store/selectors
+export const {
+  selectRouteParam
+} = fromRouter.getSelectors(selectRouterState);
 
 export const selectMessagesLoading = createSelector(
   selectMessagesState,
   state => state.isLoading
 );
 
-export const selectAllMessages = createSelector(
+export const selectMessages = createSelector(
   selectMessagesState,
   state => state.messages
 );
 
+export const selectMessageById = (id: string) => createSelector(
+  selectMessages,
+  messages => messages.find(message => message.meldungsId === id)
+);
+
+export const selectMessageByCurrentId =  createSelector(
+  selectMessages,
+  selectRouteParam('id'),
+  (messages, id) => messages.find(message => message.meldungsId === id)
+);
+
 export const selectUndergroundMessages = createSelector(
-  selectMessagesState,
-  state => state.messages.filter(message => undergroundLines.map(entry => entry.line)
+  selectMessages,
+  messages => messages.filter(message => undergroundLines.map(entry => entry.line)
     .includes(message.linie))
 );
 
 export const selectTramMessages = createSelector(
-  selectMessagesState,
-  state => state.messages.filter(message => tramLines.includes(message.linie))
+  selectMessages,
+  messages => messages.filter(message => tramLines.includes(message.linie))
 );
 
 export const selectBusMessages = createSelector(
-  selectMessagesState,
-  state => state.messages.filter(message => busLines.includes(message.linie))
+  selectMessages,
+  messages => messages.filter(message => busLines.includes(message.linie))
 );
 
 export const selectFerryMessages = createSelector(
-  selectMessagesState,
-  state => state.messages.filter(message => ferryLines.includes(message.linie))
+  selectMessages,
+  messages => messages.filter(message => ferryLines.includes(message.linie))
 );
 
 export const selectMessagesForLine = (line: string) => createSelector(
-  selectMessagesState,
-  state => state.messages.filter(message => message.linie === line)
+  selectMessages,
+  messages => messages.filter(message => message.linie === line)
 );
 
 export const selectMostRecentValidMessageForLineAndDate = (line: string, date: string) => createSelector(
@@ -60,8 +79,8 @@ export const selectValidMessagesForLineAndDate = (line: string, date: string) =>
 );
 
 export const selectAllValidMessagesForDate = (date: string) => createSelector(
-  selectMessagesState,
-  state => state.messages.filter(message => isMessageBetweenFilter(date, message))
+  selectMessages,
+  messages => messages.filter(message => isMessageBetweenFilter(date, message))
 );
 
 export const selectValidUndergroundMessagesForDate = (date: string) => createSelector(

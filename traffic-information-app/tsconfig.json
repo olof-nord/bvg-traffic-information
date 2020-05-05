@@ -22,6 +22,7 @@
       "@header/*": ["app/header/*"],
       "@breadcrumb/*": ["app/breadcrumb/*"],
       "@message-summary/*": ["app/message-summary/*"],
+      "@message-detail/*": ["app/message-detail/*"],
       "@lines/*": ["app/lines/*"],
       "@line-summary/*": ["app/line-summary/*"],
       "@date-selector/*": ["app/date-selector/*"]

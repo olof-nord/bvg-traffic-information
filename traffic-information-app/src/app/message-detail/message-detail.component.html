@@ -1,0 +1,52 @@
+<div *ngIf="message$ | async as message">
+  <h2 class="my-4 font-weight-lighter">Verkehrsmeldung-Detail</h2>
+
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <th scope="row">Line</th>
+        <td>{{ message?.linie }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Richtung</th>
+        <td>{{ message?.richtungName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Beginn</th>
+        <td>{{ message?.beginnAbschnittName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Ende</th>
+        <td>{{ message?.endeAbschnittName }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Ursache</th>
+        <td>{{ message?.textIntUrsache }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Auswirkung</th>
+        <td>{{ message?.textIntAuswirkung }}</td>
+      </tr>
+      <tr *ngIf="message?.umfahrung">
+        <th scope="row">Umfahrung</th>
+        <td>{{ message?.umfahrung }}</td>
+      </tr>
+      <tr *ngIf="message?.sev">
+        <th scope="row">Ersatzverkehr</th>
+        <td>{{ message?.sev }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Gültig von</th>
+        <td>{{ message?.gueltigVonDatum | date:'shortDate':'de':'de-DE'}} {{ message?.gueltigVonZeit.substring(0, 5) }}</td>
+      </tr>
+      <tr *ngIf="message?.gueltigBisDatum">
+        <th scope="row">Gültig bis</th>
+        <td>{{ message?.gueltigBisDatum | date:'shortDate':'de':'de-DE'}} {{ message?.gueltigBisZeit.substring(0, 5) }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Letzte Änderung</th>
+        <td>{{ message?.datum | date:'shortDate':'de':'de-DE'}} {{ message?.datum | date:'shortTime':'de':'de-DE'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

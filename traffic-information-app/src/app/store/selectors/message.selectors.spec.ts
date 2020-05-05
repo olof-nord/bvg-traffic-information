@@ -2,12 +2,14 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { TestBed } from '@angular/core/testing';
 
 import {
-  selectAllMessages,
+  selectMessages,
   selectMessagesError,
   selectMessagesLoading,
   selectBusMessages,
   selectTramMessages,
   selectUndergroundMessages,
+  selectFerryMessages,
+  selectMessageById,
   selectMessagesForLine,
   selectAllValidMessagesForDate,
   selectValidBusMessagesForDate,
@@ -62,6 +64,16 @@ describe('Message Selectors', () => {
     prioritaet: 1,
     grundFahrplanabweichung: 4
   };
+  const ferryMessage: Message = {
+    meldungsId: 'BVG259626',
+    datum: '2020-04-27T14:43:46',
+    type: 0,
+    verkehrsmittel: 4,
+    linie: 'F24',
+    gueltigVonDatum: '2020-04-30',
+    prioritaet: 2,
+    grundFahrplanabweichung: 4
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -101,13 +113,13 @@ describe('Message Selectors', () => {
   it('should correctly select all types of traffic status messages', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
 
-    expect(mockStore.select(selectAllMessages)
-      .subscribe(result => expect(result).toEqual([busMessage, ubahnMessage, tramMessage]))
+    expect(mockStore.select(selectMessages)
+      .subscribe(result => expect(result).toEqual([ busMessage, ubahnMessage, tramMessage, ferryMessage ]))
     );
 
   });
@@ -115,7 +127,7 @@ describe('Message Selectors', () => {
   it('should correctly select all bus traffic status messages', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -129,7 +141,7 @@ describe('Message Selectors', () => {
   it('should correctly select all tram traffic status messages', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -143,13 +155,27 @@ describe('Message Selectors', () => {
   it('should correctly select all u-bahn traffic status messages', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
 
     expect(mockStore.select(selectUndergroundMessages)
       .subscribe(result => expect(result).toEqual([ubahnMessage]))
+    );
+
+  });
+
+  it('should correctly select all ferry traffic status messages', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectFerryMessages)
+      .subscribe(result => expect(result).toEqual([ferryMessage]))
     );
 
   });
@@ -195,7 +221,7 @@ describe('Message Selectors', () => {
   it('should correctly select u-bahn traffic status messages active on a specific date', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -217,7 +243,7 @@ describe('Message Selectors', () => {
   it('should correctly select tram status messages active on a specific date', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -239,7 +265,7 @@ describe('Message Selectors', () => {
   it('should correctly select bus status messages active on a specific date', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -261,7 +287,7 @@ describe('Message Selectors', () => {
   it('should correctly select all traffic status messages for a specific line', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -305,7 +331,7 @@ describe('Message Selectors', () => {
   it('should correctly select all traffic status messages for a specific line and date', () => {
     mockStore.setState({
       messages: {
-        messages: [ busMessage, ubahnMessage, tramMessage ]
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
       }
     });
     mockStore.refreshState();
@@ -319,6 +345,30 @@ describe('Message Selectors', () => {
     expect(mockStore.select(selectValidMessagesForLineAndDate('U1', '2020-04-16'))
       .subscribe(result => {
         return expect(result).toEqual([ ubahnMessage ]);
+      })
+    );
+
+  });
+
+  it('should correctly select a traffic status message based on its id', () => {
+    mockStore.setState({
+      messages: {
+        messages: [ busMessage, ubahnMessage, tramMessage, ferryMessage ]
+      }
+    });
+    mockStore.refreshState();
+
+    expect(mockStore.select(selectMessageById('BVG259625'))
+      .subscribe(
+        () => {
+      }, error => {
+        return expect(error).toBeTruthy();
+      })
+    );
+
+    expect(mockStore.select(selectMessageById('BVG259626'))
+      .subscribe(result => {
+        return expect(result).toEqual(ferryMessage);
       })
     );
 
