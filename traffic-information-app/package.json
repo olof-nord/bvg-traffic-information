@@ -1,8 +1,8 @@
 {
   "name": "traffic-information-app",
-  "description": "This project uses the BVG Verkehrsmeldungen API and visualises the status information",
-  "version": "0.4.0",
-  "license": "GPL-3.0",
+  "description": "This project uses the BVG Verkehrsmeldungen API and visualises local traffic status information",
+  "version": "0.4.1",
+  "license": "AGPL-3.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:olof-nord/bvg-traffic-information.git"

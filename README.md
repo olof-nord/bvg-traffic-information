@@ -82,4 +82,4 @@ If you have a question, found a bug or want to propose a feature, start with [an
 ## License
 >You can check out the full license [here](https://github.com/olof-nord/bvg-traffic-information/blob/master/LICENSE)
 
-This project is licensed under the terms of the **GPL-3.0** license.
+This project is licensed under the terms of the **AGPL-3.0** license.
