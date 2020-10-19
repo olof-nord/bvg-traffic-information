@@ -1,4 +1,4 @@
-FROM node:12-alpine AS build
+FROM node:14-alpine AS build
 
 ARG BVG_API_KEY
 RUN if [ -z ${BVG_API_KEY} ];then \

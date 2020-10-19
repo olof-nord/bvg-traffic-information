@@ -49,7 +49,7 @@ Berliner Verkehrsbetriebe (German: "Berlin Transport Company") is is the main pu
 
 To start and build the project locally, you need to install the below.
 - [Angular 9](https://github.com/angular/angular) for its web framework.
-- [Node 12](https://github.com/nodejs/node) for its JavaScript runtime.
+- [Node 14](https://github.com/nodejs/node) for its JavaScript runtime.
 
 ### Tooling
 
